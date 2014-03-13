@@ -1,0 +1,38 @@
+﻿@model FormationGame.ViewModels.TestViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Formation</title>
+    <link rel="stylesheet" href="/Content/css/style.css" />
+</head>
+<body>
+    <div class="page-frame">
+        <h1>Det virker!</h1>
+        <p>Hvis du kan se denne side, tyder det på, at alt virker som det skal. Indtil videre.</p>
+
+        <h1>Udforsk denne kode</h1>
+        <p>En C# MVC applikation kører efter et bestemt mønster. Det er en konvention, der overholder MVC-mønstret, det er ikke fordi alle programmer skal se sådan ud.</p> 
+        <p>Alting er organiseret i objekter/klasser. Det, der sker er:</p>
+
+        <ol>
+            <li>Først kører funktionen <span class="code">Application_Start</span> i <span class="path">/Global.asax</span> (objekt). Tjek det ud nu. Det er volapyk. Den registrerer en masse ting. Dette skal vi ikke vide mere om lige nu.</li>
+            <li>Så kører funktionen <span class="code">Index</span> i <span class="path">/Controllers/TestController</span> (objekt). <span class="cyan">Cyan</span> farve betyder, at det er en klasse. Hvis du placerer cursoren på et ord med <span class="cyan">cyan</span> farve og trykker <span class="keyboard">F12</span>, åbner editoren den pågældende klasse. Prøv dette med <span class="cyan code">TestViewModel</span>.</li>
+            <li>Til sidst i funktionen returnerer den et nyt metode-kald til en metode, der hedder <span class="code">View()</span>. Denne metode henter en HTML-skabelon, som behandles. Studér først denne sides kildekode, som den ser ud i browseren. Højreklik her i browseren, og vælg "Vis kildekode".</li>
+            <li>Dernæst skal vi se den skabelon, som kildekoden er dannet ud fra. Den ligger i <span class="path">/Views/Test/Index.cshtml</span>. cshtml er en særlig blanding af C#-kode og HTML. Prøv at redigere eller tilføje noget tekst i skabelonen. Du kan ikke ødelægge noget, der ikke kan fikses igen.</li>
+            <li>Læg så mærke til, at HTML-dokumentet refererer til et CSS-dokument i <span class="code">&lt;head&gt;</span>. Find og åbn dokumentet, og se hvordan reglerne i CSS-dokumentet svarer til HTML-dokumentets udseende og kode.</li>
+        </ol>
+
+        <p>@Model.MessageForTheUser</p>
+
+        <p>Dette er genereret fra en C#-funktion: @Model.GetACountFromTo(10, 50).</p>
+
+        <p>Find både kaldet til funktionen og selve funktionen. Her kan du også bruge <span class="keyboard">F12</span>...</p>
+    </div>
+</body>
+</html>
