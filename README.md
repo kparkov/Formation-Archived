@@ -17,3 +17,5 @@ Hvad du skal gøre
 9. Tryk på knappen "Clone", og indtast dit brugernavn og password.
 10. Åbn projektet fra File > Open project > Navigér til folder > FormationGame.sln
 11. Tryk play.
+
+Hvis du ser en opløftende besked, er du herre-nice. Hygge med den videre proces... ;-)
