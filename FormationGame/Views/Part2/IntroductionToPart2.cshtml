@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Formation</title>
+    <link rel="stylesheet" href="/Content/css/style.css" />
+</head>
+<body>
+    <div class="page-frame">
+        <h1>Del 2: Controllers</h1>
+        <p>Lad os se lidt på sammenhængen imellem URL'ens adresse og den kode, der køres i Controlleren.</p>
+        <p>Læg mærke til adressen i adressebaren nu. Den følger dette format:</p>
+        <pre>http://domæne:port/controller/action</pre>
+        <ul>
+            <li><span class="code">Controlleren</span> er en bestemt type klasse, der fortolker URL'er, og administrerer actions.</li>
+            <li><span class="code">Action</span> er en bestemt type funktion, der altid returnerer et <span class="code">ActionResult</span>. Hvis der ikke er angivet en action, vil den forsøge at finde <span class="code">Index</span>-funktionen.</li>
+        </ul>
+        <p>Når du ser på URL'en, betyder dette, at <span class="code">/Part2/IntroductionToPart2</span> peger på filen <span class="path">/Controllers/Part2Controller</span>. I denne fil findes funktionen <span class="code">IntroductionToPart2</span>.</p>
+        <p>MVC-frameworket ved altså ved at kigge på URL'en, at det er denne specifikke kode, der skal hentes og køres.</p>
+        <ol>
+            <li>Her er et link - klik <strong>ikke</strong> på det endnu: @Html.ActionLink("dette link", "AboutViews", "Part2").</li>
+            <li>Start med at inspicere det, ved at højreklikke på linket og vælg "Inspicér element" (Firefox) eller "Vis detaljer om elementet" (Chrome). Bemærk, at når der ikke står <span class="code">http://domæne:port/</span>, så antages det af browseren at være det samme som ovenfor/nuværende.</li>
+            <li>Se derefter, om du kan finde dette (cs)HTML-dokument i <span class="path">/Views</span>-mappen og undermapper. Læg mærke til, hvordan linket dannes i koden.</li>
+            <li>Kan du forudse hvilken kode, der afvikles, når du trykker på linket?</li>
+        </ol>
+        <p>Klik på linket ovenfor, når du er klar til at gå videre.</p>
+    </div>
+</body>
+</html>

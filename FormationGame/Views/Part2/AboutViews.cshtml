@@ -1,0 +1,30 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Formation</title>
+    <link rel="stylesheet" href="/Content/css/style.css" />
+</head>
+<body>
+    <div class="page-frame">
+        <h1>Views</h1>
+        <p>Som vi nu har set, kan vi udlede hvilken controller-action der kører, ved at studere URL'en.</p>
+        <p>På samme måde kan vi også udlede, hvilket view der forsøges anvendt. MVC-frameworket vil nemlig antage, at vi skal bruge det view, der har stien <span class="path">/Views/(controller)/(action).cshtml</span>.</p>
+        <p>Det betyder at:</p>
+        <ul>
+            <li>Adressen er <span class="code">http://localhost:26669/Part2/AboutViews</span>.</li>
+            <li>Så vi leder efter funktionen <span class="code">AboutViews</span> i Controlleren <span class="path">/Controllers/Part2Controller</span>.</li>
+            <li>Derfor må viewet ligge i <span class="path">/Views/Part2/AboutViews.cshtml</span>.</li>
+        </ul>
+        <p>En MVC-webapplikation er opbygget omkring denne logik i alle trin: URL'en fører til en controller-action, og controller-action fører til et resultat, der typisk er et view.</p>
+        <p>Somme tider ønsker vi ikke at få et view tilbage. Det <span class="code">ActionResult</span>, som en controller-action altid resulterer, spænder over mere end blot HTML-views. Det bliver relevant at vide senere, men lige nu beskæftiger vi os kun med views.</p>
+        <p>Når projektet går rigtigt igang, bliver det <strong>Ida</strong> og <strong>Kari</strong>, der skriver koden i Controllerne, mens <strong>Esben</strong> og <strong>Jonas</strong> har ansvar for de tilhørende Views.</p>
+        <p>Når du er klar, @Html.ActionLink("kan du gå videre til næste øvelse", "ExerciseOne", "Part2").</p>
+    </div>
+</body>
+</html>

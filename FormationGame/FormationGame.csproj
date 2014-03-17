@@ -181,6 +181,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Part2Controller.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -214,6 +215,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Test\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Part2\IntroductionToPart2.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Part2\AboutViews.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Part2\ExerciseOne.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
