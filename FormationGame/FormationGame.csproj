@@ -181,6 +181,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\EsbentestController.cs" />
     <Compile Include="Controllers\Part2Controller.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
@@ -224,6 +225,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Part2\ExerciseOne.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MyNewAction.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Esbentest\MyNewAction.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
