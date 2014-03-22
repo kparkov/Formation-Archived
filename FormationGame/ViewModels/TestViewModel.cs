@@ -13,7 +13,7 @@ namespace FormationGame.ViewModels
         // Methods
         public string GetACountFromTo(int from, int to)
         {
-            List<int> ListOfNumbers = new List<int>();
+            var ListOfNumbers = new List<int>();
 
             for (int i = from; i <= to; i++)
             {
