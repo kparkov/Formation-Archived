@@ -183,13 +183,15 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\EsbentestController.cs" />
     <Compile Include="Controllers\IdatestController.cs" />
+    <Compile Include="Controllers\ParkovController.cs" />
     <Compile Include="Controllers\Part2Controller.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\Fighter.cs" />
+    <Compile Include="Tools\Die.cs" />
+    <Compile Include="Tools\Text\TextFormatter.cs" />
     <Compile Include="ViewModels\TestViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
