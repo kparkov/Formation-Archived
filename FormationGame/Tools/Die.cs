@@ -7,18 +7,13 @@ namespace FormationGame.Tools
 {
 	public class Die
 	{
-		public int Value { get; set; }
+		// Redskabsklasse til at lave tilfældige tal
+		private RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
 
-		private static Random Randomizer = new Random();
+		// Properties / Egenskaber: Hvilke data skal vi bruge for at beskrive en terning? Hvilke egenskaber beskriver en terning?
 
-		public Die()
-		{
-			Roll();
-		}
+		// Metoder / Funktioner: Hvad kan en terning? Hvilke handlinger er mulige med en terning?
 
-		public void Roll()
-		{
-			Value = Randomizer.Next(1, 6);
-		}
+		// Constructor: Hvad skal der ske, når en ny terning produceres?
 	}
 }

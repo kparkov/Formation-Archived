@@ -10,7 +10,7 @@ using Newtonsoft.Json.Serialization;
 
 namespace FormationGame.Tools.Text
 {
-	public class TextFormatter
+	public class TextRepresentation
 	{
 		public MvcHtmlString DisplayObject(object obj)
 		{
@@ -31,6 +31,11 @@ namespace FormationGame.Tools.Text
 
 		protected string ParseRootObject(object obj)
 		{
+			if (obj == null)
+			{
+				return "<em>[null]</em>";
+			}
+
 			if (obj is IEnumerable)
 			{
 				return ParseEnumerable((IEnumerable)obj);
@@ -55,7 +60,7 @@ namespace FormationGame.Tools.Text
 				list.Add(formatted);
 			}
 
-			return objectName + String.Join("", list);
+			return objectName + "<ul>" + String.Join("", list) + "</ul>";
 		}
 
 		protected bool IsPrimitiveType(Type t)
