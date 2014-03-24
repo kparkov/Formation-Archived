@@ -9,7 +9,7 @@ namespace FormationGame.Controllers
     public class SejeKariController : Controller
     {
         //
-        // GET: /Views/
+        // GET: /view sejekari/
 
         public ActionResult Index()
         {

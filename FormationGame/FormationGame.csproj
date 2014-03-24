@@ -244,7 +244,7 @@
     <Content Include="Views\Idatest\IdaView.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\SejeKari.cshtml" />
+    <Content Include="Views\SejeKari\SejeKari.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
