@@ -12,9 +12,10 @@ namespace FormationGame.Controllers
 
         public ActionResult Index()
         {
-	        var die = new Die();
+            var player1cup = new DiceCup("Black");
+            var player2cup = new DiceCup("White");
 
-	        return ObjectToHtml(die);
+            return ObjectToHtml(new { p1 = player1cup, p2 = player2cup, sum1 = player1cup.SumOfDice(), sum2 = player2cup.SumOfDice(), lowest = player1cup.LowestValue() });
         }
 
     }
