@@ -8,12 +8,16 @@ namespace FormationGame.Controllers
 {
     public class EsbentestController : Controller
     {
-        //
-        // GET: /Esbentest/
+
 
         public ActionResult MyNewAction(){
             return View();
         }
-
+        public ActionResult SejeKari()
+            {   
+            return View();
+            }
+        
+        
     }
 }
