@@ -15,22 +15,22 @@ li {
 
 .code {
     font-family: monospace;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 .path {
-    background-color: yellow;
+    background-color: blueviolet;
 }
 
 .cyan {
     color: #50a5a0;
-    font-weight: bold;
+    font-weight: lighter;
 }
 
 .keyboard {
     font-family: monospace;
     font-weight: bold;
-    border: 1px solid black;
+    border: 1px solid outset;
     background-color: #eee;
     padding: 2px 5px;
 }
