@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace FormationGame.Tools
+﻿namespace FormationGame.Tools
 {
 	public class Die
 	{
-		// Redskabsklasse til at lave tilfældige tal
+		// Instansvariable: redskaber, som denne klasse bruger internt
 		private RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
 
-		// Properties / Egenskaber: Hvilke data skal vi bruge for at beskrive en terning? Hvilke egenskaber beskriver en terning?
+		// Properties / Egenskaber: Hvilke data beskriver en terning? Hvilke egenskaber har den?
 
 		// Metoder / Funktioner: Hvad kan en terning? Hvilke handlinger er mulige med en terning?
 

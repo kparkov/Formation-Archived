@@ -192,6 +192,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\Die.cs" />
+    <Compile Include="Tools\RandomNumberGenerator.cs" />
     <Compile Include="Tools\Text\TextRepresentation.cs" />
     <Compile Include="ViewModels\TestViewModel.cs" />
   </ItemGroup>
