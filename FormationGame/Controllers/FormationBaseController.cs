@@ -11,9 +11,21 @@ namespace FormationGame.Controllers
     {
         protected TextRepresentation Texter = new TextRepresentation();
 
+		protected List<object> ViewCache = new List<object>(); 
+
 	    protected ActionResult ObjectToHtml(object Model)
 	    {
 		    return Content(Texter.DisplayObject(Model).ToHtmlString());
+	    }
+
+	    protected void AddToView(object AnyObject)
+	    {
+		    ViewCache.Add(AnyObject);
+	    }
+
+	    protected ActionResult ShowAddedObjects()
+	    {
+		    return ObjectToHtml(ViewCache);
 	    }
 
 	    protected ActionResult DView(object dynamicObject)

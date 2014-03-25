@@ -15,7 +15,10 @@ namespace FormationGame.Controllers
             var player1cup = new DiceCup("Black");
             var player2cup = new DiceCup("White");
 
-            return ObjectToHtml(new { p1 = player1cup, p2 = player2cup, sum1 = player1cup.SumOfDice(), sum2 = player2cup.SumOfDice(), lowest = player1cup.LowestValue() });
+			AddToView(player1cup);
+			AddToView(player2cup);
+
+	        return ShowAddedObjects();
         }
 
     }
