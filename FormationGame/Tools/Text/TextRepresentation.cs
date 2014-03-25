@@ -12,7 +12,7 @@ namespace FormationGame.Tools.Text
 {
 	public class TextRepresentation
 	{
-		private bool RootRendered = false;
+		private bool _rootRendered = false;
 
 		public MvcHtmlString DisplayObject(object obj)
 		{
@@ -23,7 +23,7 @@ namespace FormationGame.Tools.Text
 		{
 			var listItems = new List<string>();
 
-			var prefix = RootRendered ? "<em><strong>[property is a list currently containing these objects:]</strong></em>" : "";
+			var prefix = _rootRendered ? "<em><strong>[property is a list currently containing these objects:]</strong></em>" : "";
 
 			foreach (var obj in list)
 			{
@@ -50,7 +50,7 @@ namespace FormationGame.Tools.Text
 				return obj.ToString();
 			}
 
-			RootRendered = true;
+			_rootRendered = true;
 
 			var objectName = "<div style='margin-left: 2em;'><h3 style='text-decoration: underline; color: #50a5a0;'>" + obj.GetType().Name + "</h3>";
 

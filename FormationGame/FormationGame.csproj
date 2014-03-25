@@ -181,14 +181,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BarbarianController.cs" />
     <Compile Include="Controllers\CodeExamplesController.cs" />
-    <Compile Include="Controllers\EsbentestController.cs" />
+    <Compile Include="Controllers\FighterController.cs" />
     <Compile Include="Controllers\FormationBaseController.cs" />
-    <Compile Include="Controllers\IdatestController.cs" />
-    <Compile Include="Controllers\ParkovController.cs" />
-    <Compile Include="Controllers\Part2Controller.cs" />
-    <Compile Include="Controllers\SejeKariController.cs" />
-    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\ClericController.cs" />
+    <Compile Include="Controllers\DarklordController.cs" />
+    <Compile Include="Controllers\RogueController.cs" />
+    <Compile Include="Controllers\WizardController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -216,6 +216,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Examples\Models\Car\" />
     <Folder Include="Filters\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\" />
@@ -224,28 +225,16 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Test\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Part2\IntroductionToPart2.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Part2\AboutViews.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Part2\ExerciseOne.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\MyNewAction.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Esbentest\MyNewAction.cshtml" />
+    <Content Include="Views\Fighter\MyNewAction.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Idatest\IdaView.cshtml" />
+    <Content Include="Views\Cleric\IdaView.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\SejeKari\SejeKari.cshtml" />
+    <Content Include="Views\Rogue\SejeKari.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\CodeExamples\Index.cshtml" />
