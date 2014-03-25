@@ -17,7 +17,7 @@ namespace FormationGame.Controllers
             AddToView(Dieposition1);
             AddToView(Dieposition2);
             
-            return ShowAddedObjects(); 
+            return ShowObjects(); 
         
         }    
         //eksperimentet er her at få returneret to terningers Value på Dieposition 1 og 1- Det virker ikke, det lorrrt.
