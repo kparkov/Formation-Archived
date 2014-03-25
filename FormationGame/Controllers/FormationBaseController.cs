@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Routing;
 using FormationGame.Tools.Text;
+using WebGrease.Css.Extensions;
 
 namespace FormationGame.Controllers
 {
@@ -13,19 +15,21 @@ namespace FormationGame.Controllers
 
 		protected List<object> ViewCache = new List<object>(); 
 
-	    protected ActionResult ObjectToHtml(object Model)
+	    protected ActionResult ObjectToHtml(object model)
 	    {
-		    return Content(Texter.DisplayObject(Model).ToHtmlString());
+		    return Content(Texter.DisplayObject(model).ToHtmlString());
 	    }
 
-	    protected void AddToView(object AnyObject)
+	    protected void AddToView(params object[] objects)
 	    {
-		    ViewCache.Add(AnyObject);
+		    objects.ToList().ForEach(x => ViewCache.Add(x));
 	    }
 
-	    protected ActionResult ShowAddedObjects()
+		protected ActionResult ShowObjects(params object[] objectsToAdd)
 	    {
-		    return ObjectToHtml(ViewCache);
+		    AddToView(objectsToAdd);
+
+			return ObjectToHtml(ViewCache);
 	    }
 
 	    protected ActionResult DView(object dynamicObject)
