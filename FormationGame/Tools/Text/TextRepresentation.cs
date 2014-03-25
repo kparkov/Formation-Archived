@@ -12,21 +12,25 @@ namespace FormationGame.Tools.Text
 {
 	public class TextRepresentation
 	{
+		private bool RootRendered = false;
+
 		public MvcHtmlString DisplayObject(object obj)
 		{
-			return MvcHtmlString.Create(ParseRootObject(obj));
+			return MvcHtmlString.Create("<div style='font-family: sans-serif; font-size: 18px;'><h2>Objects added to view</h2>" + ParseRootObject(obj) + "</div>");
 		}
 
 		protected string ParseEnumerable(IEnumerable list)
 		{
 			var listItems = new List<string>();
 
+			var prefix = RootRendered ? "<em><strong>[property is a list currently containing these objects:]</strong></em>" : "";
+
 			foreach (var obj in list)
 			{
 				listItems.Add(ParseRootObject(obj));
 			}
 
-			return String.Join("", listItems);
+			return prefix + String.Join("", listItems);
 		}
 
 		protected string ParseRootObject(object obj)
@@ -36,7 +40,7 @@ namespace FormationGame.Tools.Text
 				return "<em>[null]</em>";
 			}
 
-			if (obj is IEnumerable)
+			if (obj is IEnumerable && !(obj is string))
 			{
 				return ParseEnumerable((IEnumerable)obj);
 			}
@@ -46,7 +50,9 @@ namespace FormationGame.Tools.Text
 				return obj.ToString();
 			}
 
-			var objectName = "<h3>" + obj.GetType().Name + "</h3>";
+			RootRendered = true;
+
+			var objectName = "<div style='margin-left: 2em;'><h3 style='text-decoration: underline; color: #50a5a0;'>" + obj.GetType().Name + "</h3>";
 
 			var list = new List<string>();
 
@@ -55,12 +61,12 @@ namespace FormationGame.Tools.Text
 				var propertyName = propertyInfo.Name;
 				var value = ParseRootObject(propertyInfo.GetGetMethod().Invoke(obj, new object[] {}));
 
-				var formatted = String.Format("<li><strong>{0}</strong>: {1}</li>", propertyName, value);
+				var formatted = String.Format("<li style='list-style-type: none;'><strong style='color:blue;'>{0}</strong>: {1}</li>", propertyName, value);
 
 				list.Add(formatted);
 			}
 
-			return objectName + "<ul>" + String.Join("", list) + "</ul>";
+			return objectName + "<ul style='padding:0;'>" + String.Join("", list) + "</ul></div>";
 		}
 
 		protected bool IsPrimitiveType(Type t)
