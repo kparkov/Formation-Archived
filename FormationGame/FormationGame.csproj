@@ -181,6 +181,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CodeExamplesController.cs" />
     <Compile Include="Controllers\EsbentestController.cs" />
     <Compile Include="Controllers\FormationBaseController.cs" />
     <Compile Include="Controllers\IdatestController.cs" />
@@ -245,6 +246,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\SejeKari\SejeKari.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CodeExamples\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CodeExamples\IfBasicExamples.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CodeExamples\ForBasicExamples.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CodeExamples\ForeachBasicExamples.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

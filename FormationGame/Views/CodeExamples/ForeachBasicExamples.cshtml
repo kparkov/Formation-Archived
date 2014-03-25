@@ -1,0 +1,29 @@
+﻿@model dynamic
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Foreach basale eksempler</title>
+    </head>
+    <body>
+        <div>
+            <h3>Foreach basale eksempler</h3>
+            <p>Single line of names: @Model.SingleLineWithNames</p>
+            <p>Name on 4th position: @Model.NameOn4thPosition</p>
+            <p>Single line of names with standard for: @Model.SingleLineWithStandardFor</p>
+            
+            <p>The list:</p>
+            <ul>
+                @foreach (var item in Model.ListOfNames)
+                {
+                    <li>@item</li>
+                }    
+            </ul>
+        </div>
+    </body>
+</html>
