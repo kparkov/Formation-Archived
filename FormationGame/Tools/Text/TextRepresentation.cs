@@ -23,7 +23,7 @@ namespace FormationGame.Tools.Text
 		{
 			var listItems = new List<string>();
 
-			var prefix = _rootRendered ? "<em><strong>[property is a list currently containing these objects:]</strong></em>" : "";
+			var prefix = _rootRendered ? "<em><strong style='padding-right:1em;'>[property is a list currently containing these objects:]</strong></em>" : "";
 
 			foreach (var obj in list)
 			{
@@ -47,7 +47,7 @@ namespace FormationGame.Tools.Text
 
 			if (IsPrimitiveType(obj.GetType()))
 			{
-				return obj.ToString();
+				return "<span style='padding-right:1em;'>" + obj.ToString() + "</span>";
 			}
 
 			_rootRendered = true;
