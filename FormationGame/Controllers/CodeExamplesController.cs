@@ -57,13 +57,8 @@ namespace FormationGame.Controllers
 			    equality = "De to værdier er ens";
 		    }
 
-		    return DView(new
-		    {
-			    White = whiteDie,
-				Black = blackDie,
-				Winner = winner,
-				Equality = equality
-		    });
+
+		    return ShowObjects(whiteDie, blackDie, winner, equality);
 
 	    }
 
@@ -126,13 +121,13 @@ namespace FormationGame.Controllers
 	    {
 		    List<string> listOfNames = new List<string>();
 
-			listOfNames.Add("Parkov");
+			listOfNames.Add("Parkov");  // Position 0
 			listOfNames.Add("Ida");
 			listOfNames.Add("Esben");
 			listOfNames.Add("Rasch");
 			listOfNames.Add("Kari");
 			listOfNames.Add("Jonas");
-			listOfNames.Add("Luca");
+			listOfNames.Add("Luca");	// Position 6
 
 		    string singleLineWithNames = "";
 
@@ -160,6 +155,22 @@ namespace FormationGame.Controllers
 				NameOn4thPosition = nameOn4thPosition,
 				SingleLineWithStandardFor = singleLineWithStandardFor
 		    });
+	    }
+
+	    public ActionResult WhileExamples()
+	    {
+		    var die = new Die();
+
+		    int numberOfRerolls = 0;
+
+			// En while-loop kører ikke et bestemt antal gange, men i stedet så længe en betingelse ikke er opfyldt
+		    while (die.Value < 6)
+		    {
+			    die.Roll();
+			    numberOfRerolls++;
+		    }
+
+		    return ShowObjects(die, numberOfRerolls);
 	    }
 
     }
