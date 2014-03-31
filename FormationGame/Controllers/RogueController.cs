@@ -12,6 +12,14 @@ namespace FormationGame.Controllers
 
         public ActionResult RogueView()
         {
+                        return ShowObjects();
+        }
+            
+
+		// KODE TIL LEKTION 3
+		public ActionResult Index()
+		{
+			// Her begynder vi ved tredje lektion:
             var sneakRogue = new Rogue
             {
                 Name = "Venomous Vera",
@@ -30,18 +38,8 @@ namespace FormationGame.Controllers
                 }
             };
 
-            return ShowObjects(sneakRogue);
-        }
-            
-
-		// KODE TIL LEKTION 3
-		public ActionResult Index()
-		{
-			// Her begynder vi ved tredje lektion:
-
-
 			// Denne metode kan benyttes til at vise indholdet af variabler
-			return ShowObjects();
+			return ShowObjects(sneakRogue);
 		}
 	}
 
