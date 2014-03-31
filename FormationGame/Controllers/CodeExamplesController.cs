@@ -85,11 +85,12 @@ namespace FormationGame.Controllers
 
             var excludingEndCount = new List<int>();
 
-            // This loop will NOT include the endCount
+            // This loop will NOT include the endCount, deer er 3 dele i en FOR-loop, hhv en definition, en betingelse, og en tæller eller en gentagelse (inkrementeringen)
             for (int counter = startCount; counter < endCount; counter = counter + step)
             {
                 excludingEndCount.Add(counter);
             }
+            //metode, kræver en parates ()
 
             var includingEndCount = new List<int>();
 
@@ -187,9 +188,10 @@ namespace FormationGame.Controllers
          * - Overvej betydningen af tuborg og indryk i koden.
          */
         public ActionResult WhileExamples()
+            //Actionresult er lig med en returtype, efterfølges af return
         {
             var die = new Die();
-
+            
             int numberOfRerolls = 0;
 
             while (die.Value < 6)
