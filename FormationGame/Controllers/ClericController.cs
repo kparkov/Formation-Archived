@@ -34,7 +34,7 @@ namespace FormationGame.Controllers
             return ShowObjects(supercleric);
 
 			// Denne metode kan benyttes til at vise indholdet af variabler
-		    return ShowObjects(/*Slet denne kommentar og erstat med variabler*/);
+		    /*Slet denne kommentar og erstat med variabler*/
 	    }
     }
 
