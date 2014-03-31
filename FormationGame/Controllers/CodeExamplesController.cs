@@ -18,161 +18,188 @@ namespace FormationGame.Controllers
             return View();
         }
 
-	    public ActionResult IfBasicExamples()
-	    {
-		    var whiteDie = new Die()
-		    {
-			    Color = "White"
-		    };
+        /*
+         * IDA & KARI
+         * 
+         * - Forklar hvad der sker i metoden, linie for linie
+         * - Overvej og forklar betydningen af if, else if og else
+         * - Overvej betydningen af paranteser og semikolon i koden.
+         */
+        public ActionResult IfBasicExamples()
+        {
+            var whiteDie = new Die()
+            {
+                Color = "White"
+            };
 
-		    var blackDie = new Die()
-		    {
-			    Color = "Black"
-		    };
+            var blackDie = new Die()
+            {
+                Color = "Black"
+            };
 
-		    string winner = "";
+            string winner = "";
 
-			// Større end og mindre end: > og <
-		    if (whiteDie.Value > blackDie.Value)
-		    {
-			    winner = "Hvid";
-		    } 
-			else if (whiteDie.Value < blackDie.Value)
-		    {
-			    winner = "Sort";
-		    }
-		    else if (blackDie.Value == whiteDie.Value) // Når vi spørger til om de er ens, bruger vi dobbelt lig med
-		    {
-			    winner = "Uafgjort";
-		    }
+            // Større end og mindre end: > og <
+            if (whiteDie.Value > blackDie.Value)
+            {
+                winner = "Hvid";
+            }
+            else if (whiteDie.Value < blackDie.Value)
+            {
+                winner = "Sort";
+            }
+            else if (blackDie.Value == whiteDie.Value) // Når vi spørger til om de er ens, bruger vi dobbelt lig med
+            {
+                winner = "Uafgjort";
+            }
 
-		    string equality = "";
+            string equality = "";
 
-			// Operatoren != betyder "ikke lig med"
-		    if (whiteDie.Value != blackDie.Value)
-		    {
-			    equality = "De to værdier er forskellige";
-		    }
-		    else
-		    {
-			    equality = "De to værdier er ens";
-		    }
+            // Operatoren != betyder "ikke lig med"
+            if (whiteDie.Value != blackDie.Value)
+            {
+                equality = "De to værdier er forskellige";
+            }
+            else
+            {
+                equality = "De to værdier er ens";
+            }
 
 
-		    return ShowObjects(whiteDie, blackDie, winner, equality);
+            return ShowObjects(whiteDie, blackDie, winner, equality);
 
-	    }
+        }
 
-	    public ActionResult ForBasicExamples()
-	    {
-		    int startCount = 0;
-		    int endCount = 10;
-		    int step = 1;
+        /*
+         * JONAS, ESBEN og RASCH
+         * 
+         * - Forklar hvad der sker i metoden, linie for linie.
+         * - Overvej og forklar betydningen af for.
+         * - Overvej betydningen af tuborg og indryk i koden.
+         */
+        public ActionResult ForBasicExamples()
+        {
+            int startCount = 0;
+            int endCount = 10;
+            int step = 1;
 
-			var excludingEndCount = new List<int>();
+            var excludingEndCount = new List<int>();
 
-			// This loop will NOT include the endCount
-		    for (int counter = startCount; counter < endCount; counter = counter + step)
-		    {
-			   excludingEndCount.Add(counter); 
-		    }
+            // This loop will NOT include the endCount
+            for (int counter = startCount; counter < endCount; counter = counter + step)
+            {
+                excludingEndCount.Add(counter);
+            }
 
-		    var includingEndCount = new List<int>();
+            var includingEndCount = new List<int>();
 
-			// This loop will include the end count
-		    for (int counter = startCount; counter <= endCount; counter = counter + step)
-		    {
-			    includingEndCount.Add(counter);
-		    }
+            // This loop will include the end count
+            for (int counter = startCount; counter <= endCount; counter = counter + step)
+            {
+                includingEndCount.Add(counter);
+            }
 
-		    startCount = 10;
-		    endCount = 40;
-		    step = 7;
+            startCount = 10;
+            endCount = 40;
+            step = 7;
 
-		    var oddSteps = new List<int>();
+            var oddSteps = new List<int>();
 
-			// This loop makes small steps for a loop, but giant steps for loopkind
-		    for (int counter = startCount; counter < endCount; counter = counter + step)
-		    {
-			    oddSteps.Add(counter);
-		    }
+            // This loop makes small steps for a loop, but giant steps for loopkind
+            for (int counter = startCount; counter < endCount; counter = counter + step)
+            {
+                oddSteps.Add(counter);
+            }
 
-		    startCount = 10;
-		    endCount = 0;
-		    step = -1;
+            startCount = 10;
+            endCount = 0;
+            step = -1;
 
-		    var countDown = new List<int>();
+            var countDown = new List<int>();
 
-			// This loop counts backwards
-		    for (int counter = startCount; counter >= endCount; counter = counter + step)
-		    {
-			    countDown.Add(counter);
-		    }
+            // This loop counts backwards
+            for (int counter = startCount; counter >= endCount; counter = counter + step)
+            {
+                countDown.Add(counter);
+            }
 
-		    return DView(new
-		    {
-			    ExcludingEndCount = excludingEndCount,
-				IncludingEndCount = includingEndCount,
-				OddSteps = oddSteps,
-				CountDown = countDown
-		    });
-	    }
+            return DView(new
+            {
+                ExcludingEndCount = excludingEndCount,
+                IncludingEndCount = includingEndCount,
+                OddSteps = oddSteps,
+                CountDown = countDown
+            });
+        }
 
-	    public ActionResult ForeachBasicExamples()
-	    {
-		    List<string> listOfNames = new List<string>();
+        /*
+         * IDA & KARI
+         * 
+         * - Forklar hvad der sker i metoden, linie for linie
+         * - Overvej og forklar betydningen af foreach
+         * - Overvej betydningen af paranteser og semikolon i koden.
+         */
+        public ActionResult ForeachBasicExamples()
+        {
+            List<string> listOfNames = new List<string>();
 
-			listOfNames.Add("Parkov");  // Position 0
-			listOfNames.Add("Ida");
-			listOfNames.Add("Esben");
-			listOfNames.Add("Rasch");
-			listOfNames.Add("Kari");
-			listOfNames.Add("Jonas");
-			listOfNames.Add("Luca");	// Position 6
+            listOfNames.Add("Parkov");  // Position 0
+            listOfNames.Add("Ida");
+            listOfNames.Add("Esben");
+            listOfNames.Add("Rasch");
+            listOfNames.Add("Kari");
+            listOfNames.Add("Jonas");
+            listOfNames.Add("Luca");	// Position 6
 
-		    string singleLineWithNames = "";
+            string singleLineWithNames = "";
 
-			// foreach 
-		    foreach (var name in listOfNames)
-		    {
-			    singleLineWithNames = singleLineWithNames + name + ", ";
-		    }
+            // foreach 
+            foreach (var name in listOfNames)
+            {
+                singleLineWithNames = singleLineWithNames + name + ", ";
+            }
 
-			// Husk at alle lister er baseret på et 0-indeks - det første navn har position 0.
-		    string nameOn4thPosition = listOfNames[4];
+            // Husk at alle lister er baseret på et 0-indeks - det første navn har position 0.
+            string nameOn4thPosition = listOfNames[4];
 
-		    string singleLineWithStandardFor = "";
+            string singleLineWithStandardFor = "";
 
-			// for loop med samme effekt som foreach - vi bruger tælleren til at vælge navnet
-		    for (int i = 0; i < listOfNames.Count; i++)
-		    {
-			    singleLineWithStandardFor = singleLineWithStandardFor + listOfNames[i] + ", ";
-		    }
+            // for loop med samme effekt som foreach - vi bruger tælleren til at vælge navnet
+            for (int i = 0; i < listOfNames.Count; i++)
+            {
+                singleLineWithStandardFor = singleLineWithStandardFor + listOfNames[i] + ", ";
+            }
 
-		    return DView(new
-		    {
-			    ListOfNames = listOfNames,
-				SingleLineWithNames = singleLineWithNames,
-				NameOn4thPosition = nameOn4thPosition,
-				SingleLineWithStandardFor = singleLineWithStandardFor
-		    });
-	    }
+            return DView(new
+            {
+                ListOfNames = listOfNames,
+                SingleLineWithNames = singleLineWithNames,
+                NameOn4thPosition = nameOn4thPosition,
+                SingleLineWithStandardFor = singleLineWithStandardFor
+            });
+        }
 
-	    public ActionResult WhileExamples()
-	    {
-		    var die = new Die();
+        /*
+         * JONAS, ESBEN og RASCH
+         * 
+         * - Forklar hvad der sker i metoden, linie for linie.
+         * - Overvej og forklar betydningen af while.
+         * - Overvej betydningen af tuborg og indryk i koden.
+         */
+        public ActionResult WhileExamples()
+        {
+            var die = new Die();
 
-		    int numberOfRerolls = 0;
+            int numberOfRerolls = 0;
 
-			// En while-loop kører ikke et bestemt antal gange, men i stedet så længe en betingelse ikke er opfyldt
-		    while (die.Value < 6)
-		    {
-			    die.Roll();
-			    numberOfRerolls++;
-		    }
+            while (die.Value < 6)
+            {
+                die.Roll();
+                numberOfRerolls++;
+            }
 
-		    return ShowObjects(die, numberOfRerolls);
-	    }
+            return ShowObjects(die, numberOfRerolls);
+        }
 
     }
 }
