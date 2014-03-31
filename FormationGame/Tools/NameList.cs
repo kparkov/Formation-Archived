@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace FormationGame.Tools
 {
@@ -9,7 +7,12 @@ namespace FormationGame.Tools
 	{
 		private RandomNumberGenerator randomNumbers = new RandomNumberGenerator();
 
-		public string GetRandomName()
+		public string GetRandomFirstName()
+		{
+			throw new NotImplementedException();
+		}
+
+		public string GetRandomFullName(int noOfNames)
 		{
 			throw new NotImplementedException();
 		}
@@ -19,7 +22,7 @@ namespace FormationGame.Tools
 			return Names[position];
 		}
 
-		private List<string> Names = new List<string>()
+		private List<string> Names = new List<string>
 		{
 			"Issyerlor",
 			"Losh",
