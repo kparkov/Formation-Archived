@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web.Mvc;
-using FormationGame.Tools;
-using FormationGame.Tools.Text;
-using FormationGame.ViewModels;
 
 namespace FormationGame.Controllers
 {
@@ -14,18 +10,18 @@ namespace FormationGame.Controllers
     {
         public ActionResult Index()
         {
-	        var minorDarklord = new Darklord()
+	        var minorDarklord = new Darklord
 	        {
 				Name = "Bjarne The Defiler",
 				Evilness = 4,
 				IsSupernatural = false,
 				Height = 1.68m,
 				Created = new DateTime(2013, 3, 26),
-				Pet = new DarklordFamiliar()
+				Pet = new DarklordFamiliar
 				{
 					Race = "Pinguin",
 					Name = "Futte",
-					SpecialAbilities = new List<string>()
+					SpecialAbilities = new List<string>
 					{
 						"infamous fish-eating",
 						"squeak of terror"

@@ -36,7 +36,8 @@ namespace FormationGame.Controllers
 		    if (whiteDie.Value > blackDie.Value)
 		    {
 			    winner = "Hvid";
-		    } else if (whiteDie.Value < blackDie.Value)
+		    } 
+			else if (whiteDie.Value < blackDie.Value)
 		    {
 			    winner = "Sort";
 		    }
