@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using DotNetOpenAuth.OpenId.Extensions.AttributeExchange;
 
 namespace FormationGame.Tools
 {
@@ -9,12 +11,52 @@ namespace FormationGame.Tools
 
 		public string GetRandomFirstName()
 		{
-			throw new NotImplementedException();
+            int nameNumber = randomNumbers.GetRandomNumber(0, Names.Count - 1);
+
+            return Names[nameNumber];
 		}
 
-		public string GetRandomFullName(int noOfNames)
+		// Metode 1:
+		public string GetRandomFullNameMethod1()
 		{
-			throw new NotImplementedException();
+			var fullname = "";
+			var noOfNamesInThisFullName = randomNumbers.GetRandomNumber(2, 4);
+
+			for (var i = 1; i <= noOfNamesInThisFullName; i++)
+			{
+				var nextPartOfName = GetRandomFirstName();
+
+				if (fullname == "")
+				{
+					fullname = nextPartOfName;
+				}
+				else
+				{
+					fullname = fullname + " " + nextPartOfName;
+				}
+			}
+
+			return fullname;            
+		}
+
+		// Metode 2: Denne metode gør præcis det samme som den ovenstående
+		public string GetRandomFullNameMethod2()
+		{
+			// Metode 2:
+			var nameParts = new List<string>();
+
+			for (var i = 1; i <= randomNumbers.GetRandomNumber(2, 4); i++)
+			{
+				nameParts.Add(GetRandomFirstName());
+			}
+
+			return String.Join(" ", nameParts);
+		}
+
+		// Metode 3: Denne metode gør præcis det samme som de to ovenstående
+		public string GetRandomFullNameMethod3()
+		{
+			return String.Join(" ", Enumerable.Range(1, randomNumbers.GetRandomNumber(2, 4)).Select(x => GetRandomFirstName()));
 		}
 
 		public string GetNameAtPositon(int position)

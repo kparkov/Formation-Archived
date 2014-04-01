@@ -48,48 +48,8 @@ namespace FormationGame.Tools
             return sum;
         }
 
-        // Finder puljens laveste værdi
-        public int LowestValue()
+        public void RollAllDice()
         {
-            // Vi starter med at sætte den laveste værdi til et umuligt højt tal
-            int lowestFoundSoFar = 7;
-
-            // For hver terning i listen...
-            foreach (var die in Dice)
-            {
-
-                // Hvis den nuværende ternings værdi er mindre end den nuværende, laveste værdi...
-                if (die.Value < lowestFoundSoFar) 
-                {
-
-                    // ... så sæt den laveste værdi til den nuværende.
-                    lowestFoundSoFar = die.Value;
-                }
-            }
-
-            // Returnér variablen
-            return lowestFoundSoFar;
-        }
-
-        // Find antallet af 6'ere.
-        public int NumberOf6Values()
-        {
-            // Sæt antallet til 0
-            int count = 0;
-
-            // For hver terning i puljen...
-            foreach (var die in Dice)
-            {
-                // ... hvis den nuværende terning har værdien 6...
-                if (die.Value == 6)
-                {
-                    // ... så læg 1 til antallet.
-                    count++;
-                }
-            }
-
-            // Returnér antallet.
-            return count;
         }
     }
 }
