@@ -183,11 +183,13 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BarbarianController.cs" />
     <Compile Include="Controllers\CodeExamplesController.cs" />
+    <Compile Include="Controllers\ExerciseController.cs" />
     <Compile Include="Controllers\FighterController.cs" />
     <Compile Include="Controllers\FormationBaseController.cs" />
     <Compile Include="Controllers\ClericController.cs" />
     <Compile Include="Controllers\DarklordController.cs" />
     <Compile Include="Controllers\RogueController.cs" />
+    <Compile Include="Controllers\SharedExerciseController.cs" />
     <Compile Include="Controllers\WizardController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

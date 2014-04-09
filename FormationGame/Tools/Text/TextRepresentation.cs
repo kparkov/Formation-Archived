@@ -16,7 +16,7 @@ namespace FormationGame.Tools.Text
 
 		public MvcHtmlString DisplayObject(object obj)
 		{
-			return MvcHtmlString.Create("<div style='font-family: sans-serif; font-size: 18px;'><h2>Objects added to view</h2>" + ParseRootObject(obj) + "</div>");
+			return MvcHtmlString.Create("<div style='font-family: monospace; font-size: 18px;'><h2>Objects added to view</h2>" + ParseRootObject(obj) + "</div>");
 		}
 
 		protected string ParseEnumerable(IEnumerable list)
@@ -61,7 +61,7 @@ namespace FormationGame.Tools.Text
 				var propertyName = propertyInfo.Name;
 				var value = ParseRootObject(propertyInfo.GetGetMethod().Invoke(obj, new object[] {}));
 
-				var formatted = String.Format("<li style='list-style-type: none;'><strong style='color:blue;'>{0}</strong>: {1}</li>", propertyName, value);
+				var formatted = String.Format("<li style='list-style-type: none;'><strong style='color:blue; font-family:sans-serif;'>{0}</strong>: <strong>{1}</strong></li>", propertyName, value);
 
 				list.Add(formatted);
 			}
