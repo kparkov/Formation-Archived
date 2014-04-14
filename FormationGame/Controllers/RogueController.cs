@@ -41,6 +41,20 @@ namespace FormationGame.Controllers
 			// Denne metode kan benyttes til at vise indholdet af variabler
 			return ShowObjects(sneakRogue);
 		}
+
+
+        // Modulus test
+        public ActionResult modulus()
+        {
+            int a = 2;
+            int b = 13;
+
+            // 13 modulus 2
+            int result = b % a; 
+            return ShowObjects(result);
+
+            
+        }
 	}
 
 	// MODEL:
