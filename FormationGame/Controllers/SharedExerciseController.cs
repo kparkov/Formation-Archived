@@ -10,7 +10,7 @@ namespace FormationGame.Controllers
     {
 	    public ActionResult Index()
 	    {
-		    return Content("");
+		    return Content("Fælles opgave - divide and conquer");
 	    }
 
 		// Fælles opgave løsning

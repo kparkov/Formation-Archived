@@ -160,7 +160,7 @@ namespace FormationGame.Controllers
 		/// ***********
 		///      *
 		/// 
-		/// HINT: Linieskift indsættes med koden "<br/>".
+		/// HINT: Linieskift indsættes med strengen "<br/>".
 		/// 
 		/// </summary>
 		/// <returns>Et juletræ</returns>
@@ -214,7 +214,7 @@ namespace FormationGame.Controllers
 		/// <summary>
 		/// OPGAVE 11:
 		/// 
-		/// Betragt klassen Grocery herunder. Givet en liste indeholdende Groceries, ønskes den samlede pris for alle varer.
+		/// Betragt klassen Grocery i bunden af denne fil. Givet en liste indeholdende Groceries, ønskes den samlede pris for alle varer.
 		/// </summary>
 		/// <param name="shoppingList">Indkøbslisten</param>
 		/// <returns>Den samlede pris</returns>
