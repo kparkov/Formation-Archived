@@ -68,7 +68,8 @@ namespace FormationGame.Controllers
 		/// <returns>Summen</returns>
 	    public int SumOfNumbers(int x, int y)
 		{
-			return 0;
+            var sum = x + y;
+            return sum;
 		}
 
 		/// <summary>
@@ -81,7 +82,8 @@ namespace FormationGame.Controllers
 		/// <returns>Produktet</returns>
 	    public int ProductOfNumbers(int x, int y)
 	    {
-		    return 0;
+            var produkt = x * y;
+            return produkt;
 	    }
 
 		/// <summary>
@@ -94,7 +96,7 @@ namespace FormationGame.Controllers
 		/// <returns>Om X er højere end Y</returns>
 	    public bool IsXHigherThanY(int x, int y)
 	    {
-		    return false;
+            return x > y;
 	    }
 
 		/// <summary>
@@ -110,7 +112,8 @@ namespace FormationGame.Controllers
 		/// <returns>Om de gode vinder</returns>
 	    public bool DoTheGoodGuysWin(int numberOfGoodGuys, int strengthOfEachGoodGuy, int numberOfBadGuys, int strengthOfEachBadGuy)
 		{
-			return false;
+            return numberOfGoodGuys * strengthOfEachGoodGuy > numberOfBadGuys * strengthOfEachBadGuy;
+                
 		}
 
 	    /// <summary>
@@ -125,7 +128,12 @@ namespace FormationGame.Controllers
 	    /// <returns>En tekst bestående af et gentaget tegn</returns>
 	    public string GetStringOfCharacters(char characterToRepeat, int numberOfTimes)
 		{
-			return "";
+            string result = "";
+            for (int i = 0; i < numberOfTimes; i++)
+            {
+                result = result + characterToRepeat;
+            }
+                return result;
 		}
 
 	    /// <summary>
@@ -180,7 +188,9 @@ namespace FormationGame.Controllers
 		/// <returns>En tekst der beskriver borgerens type</returns>
 	    public string GetCitizenType(int age)
 		{
-			return "";
+			if (age < 18) return "Ikke myndig";
+            if (age > 17 && age < 64) return "Voksen";
+            else return "Pensionist";
 		}
 
 		/// <summary>
@@ -192,7 +202,12 @@ namespace FormationGame.Controllers
 		/// <returns>Den omvendte liste</returns>
 		public List<string> ReverseOrderOfList(List<string> list)
 		{
-			return null;
+            var result = new List<string>();
+            for (int i = list.Count-1; i >= 0; i--)
+            {
+                result.Add(list[i]);
+            }
+            return result;
 		}
 
 		/// <summary>
@@ -208,7 +223,14 @@ namespace FormationGame.Controllers
 		/// <returns>En liste over farvede frugter</returns>
 	    public List<string> GetColoredFruits(List<string> colors, List<string> fruits)
 		{
-			return null;
+            var result = new List<string>();
+            for (int i = 0; i < colors.Count; i++)
+            {
+                result.Add(colors[i] + " " + fruits[i]);
+            }
+           
+            
+            return result;
 		} 
 
 		/// <summary>
@@ -220,7 +242,13 @@ namespace FormationGame.Controllers
 		/// <returns>Den samlede pris</returns>
 	    public int GetPriceForGroceries(List<GroceryItem> shoppingList)
 	    {
-		    return 0;
+            int result = 0;
+		    foreach (var grocery in shoppingList)
+            {
+                result = grocery.Price + result;
+            }
+ 
+            return result;
 	    }
 
 		/// <summary>
@@ -233,7 +261,7 @@ namespace FormationGame.Controllers
 		/// <returns>Sandt eller falsk</returns>
 	    public bool HasEnoughMoneyToBuyStuff(int money, List<GroceryItem> shoppingList)
 	    {
-		    return false;
+		    return money >= GetPriceForGroceries(shoppingList);
 	    }
 
 		/// <summary>
@@ -247,7 +275,15 @@ namespace FormationGame.Controllers
 		/// <returns>Et pænt resumé</returns>
 	    public string SummaryLine(List<GroceryItem> shoppingList)
 		{
-			return "";
+			string result = "";
+            foreach (var grocery in shoppingList)
+            {
+                result = result + grocery.Product + ", ";
+            }
+            result = result.Substring (0, result.Length-2) + " = kr. " + GetPriceForGroceries(shoppingList) + ",-";
+
+
+            return result;
 		}
 
 		/// <summary>
@@ -259,7 +295,19 @@ namespace FormationGame.Controllers
 		/// <returns>En dansk ugedag som tekst</returns>
 		public string DanishWeekday(DateTime date)
 		{
-			return "";
+            int day = (int)date.DayOfWeek;
+
+            var DanishWeekdayList = new List<string>(){
+                "Søndag",
+                "Mandag",
+                "Tirsdag",
+                "Onsdag",
+                "Torsdag",
+                "Fredag",
+                "Lørdag",
+            };
+            
+            return (DanishWeekdayList[day]);
 		}
 
 		/// <summary>
@@ -271,7 +319,18 @@ namespace FormationGame.Controllers
 		/// <returns>En tekst, der viser alle runde fødselsdage, og den tilhørende danske ugedag</returns>
 	    public string WeekdaysOfMyRoundBirthdays(DateTime birthday)
 		{
-			return null;
+			string result = "";
+
+            for (int i = 0; i <= 120; i = i + 10)
+            {
+                DateTime RoundBirthday = birthday.AddYears(i);
+
+                result = result + "<br/>" + RoundBirthday.Year + ": ";
+                result = result + DanishWeekday(RoundBirthday) + "<br/>";
+            }
+                
+                
+                return result;
 		}
 	}
 
