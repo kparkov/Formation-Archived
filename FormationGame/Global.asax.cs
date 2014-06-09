@@ -10,6 +10,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using BitFrame;
 using BitFrame.Models;
+using FormationGame.GameControl;
 using FormationGame.Models;
 using FormationGame.Store;
 
@@ -28,14 +29,9 @@ namespace FormationGame
 
 	        (new FormationBitBuilder()).GetStore().Database.Initialize(true);
 
-	        var model = new TestModel
-	        {
-		        Name = "Hest"
-	        };
+	        var gameControl = new GameLoader();
 
-	        var hestRepo = new Repository<TestModel>();
-
-			hestRepo.Insert(model);
+	        gameControl.StartNewGame(new Player(), new Player());
 
             AreaRegistration.RegisterAllAreas();
 

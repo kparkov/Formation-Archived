@@ -6,7 +6,7 @@ namespace FormationGame.Store
 {
 	public class FormationStore : BitStore
 	{
-		public DbSet<TestModel> TestModels { get; set; }
+		public DbSet<Game> Games { get; set; }
 
 		public FormationStore(string connectionString) : base(connectionString)
 		{
