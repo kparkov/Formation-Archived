@@ -183,6 +183,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BarbarianController.cs" />
     <Compile Include="Controllers\CodeExamplesController.cs" />
+    <Compile Include="Controllers\Exercise2Controller.cs" />
     <Compile Include="Controllers\ExerciseController.cs" />
     <Compile Include="Controllers\FighterController.cs" />
     <Compile Include="Controllers\FormationBaseController.cs" />
@@ -250,6 +251,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\CodeExamples\ForeachBasicExamples.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\bitcore\BitFrame\BitFrame.csproj">
+      <Project>{7b9b41a5-c615-4b02-b328-6502a5034afc}</Project>
+      <Name>BitFrame</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

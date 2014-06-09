@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Web;
 using System.Web.Mvc;
 using FormationGame.Tools;
@@ -18,13 +19,6 @@ namespace FormationGame.Controllers
             return View();
         }
 
-        /*
-         * IDA & KARI
-         * 
-         * - Forklar hvad der sker i metoden, linie for linie
-         * - Overvej og forklar betydningen af if, else if og else
-         * - Overvej betydningen af paranteser og semikolon i koden.
-         */
         public ActionResult IfBasicExamples()
         {
             var whiteDie = new Die()
@@ -70,13 +64,6 @@ namespace FormationGame.Controllers
 
         }
 
-        /*
-         * JONAS, ESBEN og RASCH
-         * 
-         * - Forklar hvad der sker i metoden, linie for linie.
-         * - Overvej og forklar betydningen af for.
-         * - Overvej betydningen af tuborg og indryk i koden.
-         */
         public ActionResult ForBasicExamples()
         {
             int startCount = 0;
@@ -133,13 +120,6 @@ namespace FormationGame.Controllers
             });
         }
 
-        /*
-         * IDA & KARI
-         * 
-         * - Forklar hvad der sker i metoden, linie for linie
-         * - Overvej og forklar betydningen af foreach
-         * - Overvej betydningen af paranteser og semikolon i koden.
-         */
         public ActionResult ForeachBasicExamples()
         {
             List<string> listOfNames = new List<string>();
@@ -180,15 +160,7 @@ namespace FormationGame.Controllers
             });
         }
 
-        /*
-         * JONAS, ESBEN og RASCH
-         * 
-         * - Forklar hvad der sker i metoden, linie for linie.
-         * - Overvej og forklar betydningen af while.
-         * - Overvej betydningen af tuborg og indryk i koden.
-         */
         public ActionResult WhileExamples()
-            //Actionresult er lig med en returtype, efterfølges af return
         {
             var die = new Die();
             
@@ -203,5 +175,20 @@ namespace FormationGame.Controllers
             return ShowObjects(die, numberOfRerolls);
         }
 
+		public ActionResult UsefulTools()
+		{
+			// String.Join
+			// Tager en separator og en liste af strenge, og returnerer én streng, hvor de enkelte elementer er sammenføjet af separatoren
+			var names = new List<string> { "Jonas", "Kari", "Esben", "Ida", "Rasch" };
+			var commaJoined = String.Join(", ", names);		// commaJoined = "Jonas, Kari, Esben, Ida, Rasch"
+
+			// .split
+			// Splitter en streng tilbage i en liste med udgangspunkt 
+
+			return ShowObjects(new
+			{
+				CommaJoined = commaJoined
+			});
+		}
     }
 }
