@@ -1,8 +1,6 @@
 ﻿using System.Web.Mvc;
-using BitFrame.Models;
 using FormationGame.GameControl;
 using FormationGame.Models;
-using Newtonsoft.Json;
 
 namespace FormationGame.Controllers
 {
