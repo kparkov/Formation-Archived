@@ -1,14 +1,39 @@
 ﻿using System.Linq;
 using BitFrame.Models;
+using Newtonsoft.Json;
 
 namespace FormationGame.Models
 {
+	public enum MoveType
+	{
+		Push,
+		Jump,
+		Split,
+		Switch,
+		Boost,
+		Fourify,
+		Match,
+		Destroy
+	}
+
+	public enum MoveDirection
+	{
+		Up,
+		Down
+	}
+
 	public class Move : BaseModel
 	{
+		[JsonIgnore]
 		public virtual Game Game { get; set; }
+
+		public MoveType Type { get; set; }
+		public int Position { get; set; }
+		public MoveDirection Direction { get; set; }
 
 		#region NavigationHelperProperties
 
+		[JsonIgnore]
 		public virtual GameState PrecedingGameState
 		{
 			get
@@ -21,6 +46,7 @@ namespace FormationGame.Models
 			}
 		}
 
+		[JsonIgnore]
 		public virtual GameState SucceedingGameState
 		{
 			get
@@ -36,20 +62,6 @@ namespace FormationGame.Models
 
 				return Game.GameStates.ToList()[moveIndex + 1];
 			}
-		}
-
-		#endregion
-
-		#region SupportMethods
-
-		public bool IsSameMove(Move otherMove)
-		{
-			if (otherMove == null)
-			{
-				return false;
-			}
-
-			return this == otherMove;
 		}
 
 		#endregion
