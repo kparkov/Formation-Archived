@@ -201,14 +201,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\CodeExamplesController.cs" />
-    <Compile Include="Controllers\ExerciseController.cs" />
     <Compile Include="Controllers\FormationBaseController.cs" />
     <Compile Include="Controllers\GameController.cs" />
-    <Compile Include="Controllers\LinqExamplesController.cs" />
-    <Compile Include="GameControl\GameLoader.cs" />
-    <Compile Include="GameControl\PostAnalysis.cs" />
-    <Compile Include="GameControl\PreAnalysis.cs" />
+    <Compile Include="GameControllers\GameFlow.cs" />
+    <Compile Include="GameControllers\GameDatabase.cs" />
+    <Compile Include="GameControllers\PostAnalysis.cs" />
+    <Compile Include="GameControllers\PreAnalysis.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -224,6 +222,9 @@
     <Compile Include="Tools\NameList.cs" />
     <Compile Include="Tools\RandomNumberGenerator.cs" />
     <Compile Include="Tools\Text\TextRepresentation.cs" />
+    <Compile Include="Training\CodeExamplesController.cs" />
+    <Compile Include="Training\ExerciseController.cs" />
+    <Compile Include="Training\LinqExamplesController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\style.css" />

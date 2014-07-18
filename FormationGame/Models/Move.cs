@@ -32,22 +32,20 @@ namespace FormationGame.Models
 		// todo: implement needed properties
 
 
-
 		/// <summary>
 		/// Returns a game state as a result of an earlier game state plus a move.
 		/// 
 		/// Example:
 		/// 
-		/// var newGameState = oldGameState + playerMove;
+		/// var newGameState = playerMove.ApplyToGameState(currentGameState)
 		/// 
 		/// newGameState will be the resulting game state.
 		/// 
-		/// Any resulting, illegal game state should throw an exception.
+		/// If the current move cannot be performed, it should throw an exception.
 		/// </summary>
 		/// <param name="gameState">the earlier game state</param>
-		/// <param name="move">the move</param>
 		/// <returns>a new game state</returns>
-		public static GameState operator +(GameState gameState, Move move)
+		public GameState ApplyToGameState(GameState gameState)
 		{
 			// todo: implement
 

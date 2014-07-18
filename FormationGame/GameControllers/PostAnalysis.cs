@@ -1,7 +1,7 @@
 ﻿using System;
 using FormationGame.Models;
 
-namespace FormationGame.GameControl
+namespace FormationGame.GameControllers
 {
 	public class PostAnalysis
 	{

@@ -1,35 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using BitFrame.Models;
 using FormationGame.Models;
 
-namespace FormationGame.GameControl
+namespace FormationGame.GameControllers
 {
-	public class GameLoader
+	public class GameDatabase
 	{
-		public Game StartNewGame(Player whitePlayer, Player blackPlayer)
-		{
-			var game = Game.GetNewGame(whitePlayer.AsUnchanged(), blackPlayer.AsUnchanged());
-
-			game.AsNewGraph().PersistGraph();
-
-			return game;
-		}
-
-		public void SaveGame(Game game)
-		{
-			game.AsModifiedGraph().PersistGraph();
-		}
-
-		public Player GetPlayerByUserName(string userName)
-		{
-			var players = new Repository<Player>();
-
-			return Repository.Get<Player>().Where(x => x.UserName == userName).One();
-		}
-
 		public void Initialize()
 		{
 			SetupTestData();

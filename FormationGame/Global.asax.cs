@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Data.Entity;
-using System.Linq;
-
-
-
-using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using BitFrame;
 using BitFrame.Models;
-using FormationGame.GameControl;
+using FormationGame.GameControllers;
 using FormationGame.Models;
 using FormationGame.Store;
 
@@ -26,17 +19,13 @@ namespace FormationGame
     {
         protected void Application_Start()
         {
-
-
 			Database.SetInitializer(new DropCreateDatabaseAlways<FormationStore>());
 
 			BitCore.Builder = new FormationBitBuilder();
 
 	        (new FormationBitBuilder()).GetStore().Database.Initialize(true);
 
-	        var gameControl = new GameLoader();
-
-	        gameControl.StartNewGame(new Player(), new Player());
+	        new GameFlow().PrepareDatabase();
 
             AreaRegistration.RegisterAllAreas();
 

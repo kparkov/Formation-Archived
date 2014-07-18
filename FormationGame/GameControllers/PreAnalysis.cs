@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using FormationGame.Models;
 
-namespace FormationGame.GameControl
+namespace FormationGame.GameControllers
 {
 	public class PreAnalysis
 	{

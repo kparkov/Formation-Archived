@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using FormationGame.Controllers;
 
-namespace FormationGame.Controllers
+namespace FormationGame.Training
 {
     public class ExerciseController : FormationBaseController
     {

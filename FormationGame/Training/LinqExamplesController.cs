@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using YamlDotNet.Core;
+using FormationGame.Controllers;
 
-namespace FormationGame.Controllers
+namespace FormationGame.Training
 {
 	public class Person
 	{

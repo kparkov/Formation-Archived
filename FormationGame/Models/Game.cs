@@ -9,25 +9,7 @@ namespace FormationGame.Models
 	{
 		public virtual Player White { get; set; }
 		public virtual Player Black { get; set; }
-
-		private Player _firstActingPlayer;
-
-		public virtual Player FirstActingPlayer
-		{
-			get
-			{
-				return _firstActingPlayer;
-			}
-			set
-			{
-				if (_firstActingPlayer != null && (_firstActingPlayer == White || _firstActingPlayer == Black))
-				{
-					_firstActingPlayer = value;
-				}
-
-				throw new ArgumentException("The first acting player must be one of the registered players.");
-			}
-		}
+		public virtual Player FirstActingPlayer { get; set; }
 
 		public virtual List<GameState> GameStates { get; set; }
 		public virtual List<Move> Moves { get; set; }

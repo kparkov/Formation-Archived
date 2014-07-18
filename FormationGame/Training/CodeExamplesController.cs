@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Dynamic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Web;
 using System.Web.Mvc;
+using FormationGame.Controllers;
 using FormationGame.Tools;
 
-namespace FormationGame.Controllers
+namespace FormationGame.Training
 {
     public class CodeExamplesController : FormationBaseController
     {

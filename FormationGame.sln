@@ -8,8 +8,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9AE2DB
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitFrame", "..\BitCore\BitFrame\BitFrame.csproj", "{7B9B41A5-C615-4B02-B328-6502A5034AFC}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +21,6 @@ Global
 		{EDE59F38-813F-4FE0-B438-220FC12C8B64}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EDE59F38-813F-4FE0-B438-220FC12C8B64}.TestSIT|Any CPU.ActiveCfg = Release|Any CPU
 		{EDE59F38-813F-4FE0-B438-220FC12C8B64}.TestSIT|Any CPU.Build.0 = Release|Any CPU
-		{7B9B41A5-C615-4B02-B328-6502A5034AFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7B9B41A5-C615-4B02-B328-6502A5034AFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7B9B41A5-C615-4B02-B328-6502A5034AFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7B9B41A5-C615-4B02-B328-6502A5034AFC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7B9B41A5-C615-4B02-B328-6502A5034AFC}.TestSIT|Any CPU.ActiveCfg = TestSIT|Any CPU
-		{7B9B41A5-C615-4B02-B328-6502A5034AFC}.TestSIT|Any CPU.Build.0 = TestSIT|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
