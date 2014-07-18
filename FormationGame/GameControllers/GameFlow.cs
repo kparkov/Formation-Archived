@@ -51,9 +51,9 @@ namespace FormationGame.GameControllers
 		/// 
 		/// DOES NOT WORK.
 		/// </summary>
-		/// <param name="game"></param>
-		/// <param name="move"></param>
-		/// <returns></returns>
+		/// <param name="game">A game object</param>
+		/// <param name="move">A move object</param>
+		/// <returns>A boolean indicating whether this move is legal</returns>
 		public bool CheckMoveIsLegal(Game game, Move move)
 		{
 			var postAnalysis = new PostAnalysis();
@@ -80,8 +80,8 @@ namespace FormationGame.GameControllers
 		/// 
 		/// DOES NOT WORK.
 		/// </summary>
-		/// <param name="game"></param>
-		/// <returns></returns>
+		/// <param name="game">A game object</param>
+		/// <returns>A collection of legal moves</returns>
 		public IEnumerable<Move> GetOptionsInGame(Game game)
 		{
 			var preAnalysis = new PreAnalysis();
@@ -95,9 +95,9 @@ namespace FormationGame.GameControllers
 		/// 
 		/// WILL WORK AUTOMATICALLY WHEN THE ABOVE HAS BEEN IMPLEMENTED CORRECTLY.
 		/// </summary>
-		/// <param name="game"></param>
-		/// <param name="move"></param>
-		/// <returns></returns>
+		/// <param name="game">A game object</param>
+		/// <param name="move">A move object</param>
+		/// <returns>An updated and saved game object</returns>
 		public Game PerformMoveAndSave(Game game, Move move)
 		{
 			game.CleanStateGraph();
