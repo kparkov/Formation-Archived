@@ -1,4 +1,8 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
+using BitFrame.Models;
 using FormationGame.GameControl;
 using FormationGame.Models;
 
@@ -10,14 +14,21 @@ namespace FormationGame.Controllers
         {
 	        var gameLoader = new GameLoader();
 
-	        var white = new Player();
-	        var black = new Player();
+			gameLoader.Initialize();
+
+	        var white = gameLoader.GetPlayerByUserName("esben");
+	        var black = gameLoader.GetPlayerByUserName("rasch");
 
 	        var game = gameLoader.StartNewGame(white, black);
-			game.GameStates.Add(new GameState() { Game = game });
 
 	        return Show(game);
         }
 
+	    public ActionResult ShowPlayer()
+	    {
+		    var player = new Player();
+
+		    return Show(player);
+	    }
     }
 }

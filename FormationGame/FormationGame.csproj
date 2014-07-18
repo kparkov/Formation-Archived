@@ -43,9 +43,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="BitFrame, Version=0.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="BitFrame, Version=0.0.0.6, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\BitFrame.0.0.0.4\lib\net45\BitFrame.dll</HintPath>
+      <HintPath>..\packages\BitFrame.0.0.0.6\lib\net45\BitFrame.dll</HintPath>
     </Reference>
     <Reference Include="DotNetOpenAuth.AspNet">
       <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net45-full\DotNetOpenAuth.AspNet.dll</HintPath>
@@ -205,6 +205,7 @@
     <Compile Include="Controllers\ExerciseController.cs" />
     <Compile Include="Controllers\FormationBaseController.cs" />
     <Compile Include="Controllers\GameController.cs" />
+    <Compile Include="Controllers\LinqExamplesController.cs" />
     <Compile Include="GameControl\GameLoader.cs" />
     <Compile Include="GameControl\PostAnalysis.cs" />
     <Compile Include="GameControl\PreAnalysis.cs" />

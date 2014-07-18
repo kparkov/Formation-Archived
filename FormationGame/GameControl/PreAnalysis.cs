@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using FormationGame.Models;
 
 namespace FormationGame.GameControl
@@ -19,7 +20,7 @@ namespace FormationGame.GameControl
 			return result;
 		}
 
-		public IEnumerable<MoveType> AllMoveTypes()
+		public ReadOnlyCollection<MoveType> AllMoveTypes()
 		{
 			return new List<MoveType>
 			{
@@ -31,7 +32,8 @@ namespace FormationGame.GameControl
 				MoveType.Push,
 				MoveType.Split,
 				MoveType.Switch
-			};
+			}
+			.AsReadOnly();
 		} 
 	}
 }

@@ -10,8 +10,17 @@ namespace FormationGame.Models
 		[JsonIgnore]
 		public virtual Game Game { get; set; }
 
+
+		// todo: implement needed properties
+
+
+
+
+
+
+
 		/// <summary>
-		/// Returns the player to act next.
+		/// Returns the player to act at this game state.
 		/// </summary>
 		/// <returns></returns>
 		public Player GetActivePlayer()
@@ -39,25 +48,6 @@ namespace FormationGame.Models
 			throw new NotImplementedException();
 		}
 
-		/// <summary>
-		/// Returns a game state as a result of an earlier game state plus a move.
-		/// 
-		/// Example:
-		/// 
-		/// var newGameState = oldGameState + playerMove;
-		/// 
-		/// newGameState will be the resulting game state
-		/// </summary>
-		/// <param name="gameState">the earlier game state</param>
-		/// <param name="move">the move</param>
-		/// <returns>a new game state</returns>
-		public static GameState operator +(GameState gameState, Move move)
-		{
-			// todo: implement
-
-			throw new NotImplementedException();
-		}
-
 		#region NavigationHelperProperties 
 
 		[JsonIgnore]
@@ -65,16 +55,14 @@ namespace FormationGame.Models
 		{
 			get
 			{
-				var gameStates = Game.GameStates.ToList();
-
-				var gameStateIndex = gameStates.IndexOf(this);
+				var gameStateIndex = Game.GameStates.IndexOf(this);
 
 				if (gameStateIndex == 0)
 				{
 					return null;
 				}
 
-				return Game.Moves.ToList()[gameStateIndex - 1];
+				return Game.Moves[gameStateIndex - 1];
 			}
 		}
 
@@ -83,16 +71,14 @@ namespace FormationGame.Models
 		{
 			get
 			{
-				var gameStates = Game.GameStates.ToList();
+				var gameStateIndex = Game.GameStates.IndexOf(this);
 
-				var gameStateIndex = gameStates.IndexOf(this);
-
-				if (Game.Moves.Count() < gameStates.Count)
+				if (Game.Moves.Count < Game.GameStates.Count)
 				{
 					return null;
 				}
 
-				return Game.Moves.ToList()[gameStateIndex];
+				return Game.Moves[gameStateIndex];
 			}
 		}
 
@@ -117,6 +103,11 @@ namespace FormationGame.Models
 		public bool IsCurrentState
 		{
 			get { return Game.GameStates.ToList().IndexOf(this) == Game.GameStates.Count() - 1; }
+		}
+
+		public bool IsInitialGameState
+		{
+			get { return Game.GameStates.IndexOf(this) == 0; }
 		}
 
 		#endregion

@@ -1,12 +1,11 @@
-﻿using System.Collections.Generic;
-using BitFrame.Models;
-using Newtonsoft.Json;
+﻿using BitFrame.Models;
 
 namespace FormationGame.Models
 {
 	public class Player : BaseModel
 	{
-		[JsonIgnore]
-		public virtual ICollection<Game> Games { get; set; } 
+		public string UserName { get; set; }
+		public string Email { get; set; }
+		public string Password { get; set; }
 	}
 }

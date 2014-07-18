@@ -11,46 +11,66 @@ namespace FormationGame.GameControl
 	{
 		public Game StartNewGame(Player whitePlayer, Player blackPlayer)
 		{
-			var game = new Game()
-			{
-				White = whitePlayer,
-				Black = blackPlayer
-			};
+			var game = Game.GetNewGame(whitePlayer.AsUnchanged(), blackPlayer.AsUnchanged());
 
-			game.GameStates.Add(GetNewStartingGameState());
-
-			var repository = new Repository<Game>();
-
-			repository.InsertOrUpdateGraph(game);
+			game.AsNewGraph().PersistGraph();
 
 			return game;
 		}
 
 		public void SaveGame(Game game)
 		{
-			var repository = new Repository<Game>();
-
-			game.State = State.Modified;
-
-			game.White.State = State.Modified;
-			game.Black.State = State.Modified;
-
-			foreach (var gameState in game.GameStates)
-			{
-				gameState.State = State.Modified;
-			}
-
-			foreach (var move in game.Moves)
-			{
-				move.State = State.Modified;
-			}
+			game.AsModifiedGraph().PersistGraph();
 		}
 
-		private GameState GetNewStartingGameState()
+		public Player GetPlayerByUserName(string userName)
 		{
-			// todo: initialize the game state to represent a valid starting point for a game.
+			var players = new Repository<Player>();
 
-			return new GameState();
+			return Repository.Get<Player>().Where(x => x.UserName == userName).One();
 		}
+
+		public void Initialize()
+		{
+			SetupTestData();
+		}
+
+		private void SetupTestData()
+		{
+			var players = Repository.Get<Player>();
+
+			if (players.Count() > 0) return;
+
+			var newPlayers = new List<Player>()
+			{
+				new Player()
+				{
+					UserName = "ida",
+					Email = "ida@rausch.dk",
+					Password = "hest"
+				}.AsNew(),
+				new Player()
+				{
+					UserName = "kparkov",
+					Email = "kparkov@gmail.com",
+					Password = "hest"
+				}.AsNew(),
+				new Player()
+				{
+					UserName = "rasch",
+					Email = "raschristian@gmail.com",
+					Password = "hest"
+				}.AsNew(),
+				new Player()
+				{
+					UserName = "esben",
+					Email = "esbenheick@gmail.com",
+					Password = "hest"
+				}.AsNew()
+			};
+
+			players.SaveGraph(newPlayers);
+		}
+
 	}
 }
