@@ -43,9 +43,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="BitFrame, Version=0.0.0.7, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="BitFrame, Version=0.1.0.11, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\BitFrame.0.0.0.7\lib\net45\BitFrame.dll</HintPath>
+      <HintPath>..\packages\BitFrame.0.1.0.11\lib\net45\BitFrame.dll</HintPath>
     </Reference>
     <Reference Include="DotNetOpenAuth.AspNet">
       <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net45-full\DotNetOpenAuth.AspNet.dll</HintPath>
@@ -203,6 +203,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\FormationBaseController.cs" />
     <Compile Include="Controllers\GameController.cs" />
+    <Compile Include="Controllers\InheritanceController.cs" />
     <Compile Include="GameControllers\GameFlow.cs" />
     <Compile Include="GameControllers\GameDatabase.cs" />
     <Compile Include="GameControllers\PostAnalysis.cs" />
@@ -224,6 +225,7 @@
     <Compile Include="Tools\Text\TextRepresentation.cs" />
     <Compile Include="Training\CodeExamplesController.cs" />
     <Compile Include="Training\ExerciseController.cs" />
+    <Compile Include="Training\Inheritance.cs" />
     <Compile Include="Training\LinqExamplesController.cs" />
   </ItemGroup>
   <ItemGroup>

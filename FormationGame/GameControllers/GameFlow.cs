@@ -32,7 +32,7 @@ namespace FormationGame.GameControllers
 		/// <summary>
 		/// Starts a new game, saves it to the database, and returns it.
 		/// 
-		/// This method WORKS.
+		/// DOES NOT WORK.
 		/// </summary>
 		/// <param name="white">The white player object</param>
 		/// <param name="black">The black player object</param>
