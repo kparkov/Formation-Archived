@@ -10,7 +10,12 @@ namespace FormationGame.Models
 		Black
 	}
 
-	public class Die : BaseModel
+    public class Cell : BaseModel { }
+
+
+    public class EmptyCell : Cell {  }
+
+	public class Die : Cell
 	{
 		private RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
 
