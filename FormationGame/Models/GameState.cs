@@ -36,7 +36,17 @@ namespace FormationGame.Models
         /// <returns></returns>
         public int GetPointScore()
         {
-            throw new NotImplementedException();
+            int sum = 0;
+
+            for (var i = 0; i < 8; i++) 
+            {
+                if (BlackDiceRow[i] is Die && WhiteDiceRow[i] is Die)
+                {
+                    sum = sum + (((Die)BlackDiceRow[i]).Value - ((Die)WhiteDiceRow[i]).Value);
+                }
+            }
+
+            return sum;
         }
 
         /// <summary>
@@ -56,22 +66,33 @@ namespace FormationGame.Models
 
         private static List<Cell> GetNewDiceRow()
         {
-            var Result = new List<Cell>();
-            for (var i = 0; i < 8; i++)
-            {
-                if (i == 0 || i > 5)
-                {
-                    Result.Add(new EmptyCell());
-                }
-                else
-                {
+            var diceRow = new List<Cell>();
 
-                    var die = new Die();
-                    die.Roll();
-                    Result.Add(die);
-                }
+            for (var i = 0; i < 5; i++)
+            {
+                var die = new Die();
+                die.Roll();
+                diceRow.Add(die);
             }
-            return Result;
+
+            diceRow = diceRow
+                .OfType<Die>()
+                .OrderByDescending(x => x.Value)
+                .Cast<Cell>()
+                .ToList();
+
+            for (var i = 0; i < 2; i++)
+            {
+                diceRow.Add(new EmptyCell());
+            }
+
+            diceRow.Reverse();
+
+            diceRow.Add(new EmptyCell());
+
+            diceRow.Reverse();
+
+            return diceRow;
         }
 
 

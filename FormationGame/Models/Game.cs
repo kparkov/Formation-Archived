@@ -70,6 +70,15 @@ namespace FormationGame.Models
             game.Black = black;
             game.GameStates.Add(GameState.GetInitialState());
 
+            if (game.CurrentState.GetPointScore () <0) 
+            { 
+                game.FirstActingPlayer = black;
+            }
+            else 
+            {
+                game.FirstActingPlayer = white;
+            }
+
             return game;
 
 		}
