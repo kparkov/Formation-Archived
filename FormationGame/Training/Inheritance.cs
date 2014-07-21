@@ -39,17 +39,17 @@ namespace FormationGame.Training
 				Charisma = 16
 			};
 
-			var text = GetHeadline(myCharacter) + AverageAttributeScore(myCharacter);
+			var text = GetHeadline(myCharacter) + ", average: " + AverageAttributeScore(myCharacter);
 
 			return new ContentResult() {Content = text};
 		}
 		
-		public decimal AverageAttributeScore(Character character)
+		protected decimal AverageAttributeScore(Character character)
 		{
 			return (character.Strength + character.Dexterity + character.Constitution + character.Intelligence + character.Wisdom + character.Charisma) / 6m;
 		}
 
-		public string GetHeadline(Character character)
+		protected string GetHeadline(Character character)
 		{
 			return character.Name + " (level " + character.Level + ")";
 		}
