@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using BitFrame.Models;
 using Newtonsoft.Json;
@@ -57,32 +58,34 @@ namespace FormationGame.Models
 
 		#region NavigationHelperProperties
 
-		[JsonIgnore]
-		public virtual GameState PrecedingGameState
-		{
-			get
-			{
-				var moveIndex = Game.Moves.IndexOf(this);
+		//[JsonIgnore]
+		//[NotMapped]
+		//public virtual GameState PrecedingGameState
+		//{
+		//	get
+		//	{
+		//		var moveIndex = Game.Moves.IndexOf(this);
 
-				return Game.GameStates[moveIndex];
-			}
-		}
+		//		return Game.GameStates[moveIndex];
+		//	}
+		//}
 
-		[JsonIgnore]
-		public virtual GameState SucceedingGameState
-		{
-			get
-			{
-				var moveIndex = Game.Moves.IndexOf(this);
+		//[JsonIgnore]
+		//[NotMapped]
+		//public virtual GameState SucceedingGameState
+		//{
+		//	get
+		//	{
+		//		var moveIndex = Game.Moves.IndexOf(this);
 
-				if (Game.GameStates.Count <= moveIndex)
-				{
-					return null;
-				}
+		//		if (Game.GameStates.Count <= moveIndex)
+		//		{
+		//			return null;
+		//		}
 
-				return Game.GameStates[moveIndex + 1];
-			}
-		}
+		//		return Game.GameStates[moveIndex + 1];
+		//	}
+		//}
 
 		public bool Equals(Move move)
 		{

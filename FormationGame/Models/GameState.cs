@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using BitFrame.Models;
 using Newtonsoft.Json;
@@ -61,65 +62,69 @@ namespace FormationGame.Models
 
 		#region NavigationHelperProperties 
 
-		[JsonIgnore]
-		public Move PrecedingMove
-		{
-			get
-			{
-				var gameStateIndex = Game.GameStates.IndexOf(this);
+		//[JsonIgnore]
+		//[NotMapped]
+		//public Move PrecedingMove
+		//{
+		//	get
+		//	{
+		//		var gameStateIndex = Game.GameStates.IndexOf(this);
 
-				if (gameStateIndex == 0)
-				{
-					return null;
-				}
+		//		if (gameStateIndex == 0)
+		//		{
+		//			return null;
+		//		}
 
-				return Game.Moves[gameStateIndex - 1];
-			}
-		}
+		//		return Game.Moves[gameStateIndex - 1];
+		//	}
+		//}
 
-		[JsonIgnore]
-		public Move SucceedingMove
-		{
-			get
-			{
-				var gameStateIndex = Game.GameStates.IndexOf(this);
+		//[JsonIgnore]
+		//[NotMapped]
+		//public Move SucceedingMove
+		//{
+		//	get
+		//	{
+		//		var gameStateIndex = Game.GameStates.IndexOf(this);
 
-				if (Game.Moves.Count < Game.GameStates.Count)
-				{
-					return null;
-				}
+		//		if (Game.Moves.Count < Game.GameStates.Count)
+		//		{
+		//			return null;
+		//		}
 
-				return Game.Moves[gameStateIndex];
-			}
-		}
+		//		return Game.Moves[gameStateIndex];
+		//	}
+		//}
 
-		[JsonIgnore]
-		public GameState PrecedingGameState
-		{
-			get
-			{
-				return PrecedingMove.PrecedingGameState;
-			}
-		}
+		//[JsonIgnore]
+		//[NotMapped]
+		//public GameState PrecedingGameState
+		//{
+		//	get
+		//	{
+		//		return PrecedingMove.PrecedingGameState;
+		//	}
+		//}
 
-		[JsonIgnore]
-		public GameState SucceedingGameState
-		{
-			get
-			{
-				return SucceedingMove.SucceedingGameState;
-			}
-		}
+		//[JsonIgnore]
+		//[NotMapped]
+		//public GameState SucceedingGameState
+		//{
+		//	get
+		//	{
+		//		return SucceedingMove.SucceedingGameState;
+		//	}
+		//}
 
-		public bool IsCurrentState
-		{
-			get { return Game.GameStates.ToList().IndexOf(this) == Game.GameStates.Count() - 1; }
-		}
+		//public bool IsCurrentState
+		//{
+		//	get { return Game.GameStates.ToList().IndexOf(this) == Game.GameStates.Count() - 1; }
+		//}
 
-		public bool IsInitialGameState
-		{
-			get { return Game.GameStates.IndexOf(this) == 0; }
-		}
+		//public bool IsInitialGameState
+		//{
+		//	get { return Game.GameStates.IndexOf(this) == 0; }
+		//}
 
 		#endregion
 	}
