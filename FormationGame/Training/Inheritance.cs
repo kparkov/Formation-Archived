@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FormationGame.Tools;
 
 namespace FormationGame.Training
 {
@@ -19,6 +20,11 @@ namespace FormationGame.Training
 		public int Intelligence { get; set; }
 		public int Wisdom { get; set; }
 		public int Charisma { get; set; }
+
+		public int CombatScore()
+		{
+			return Strength + Dexterity + Constitution;
+		}
 	}
 
 
@@ -39,14 +45,9 @@ namespace FormationGame.Training
 				Charisma = 16
 			};
 
-			var text = GetHeadline(myCharacter) + ", average: " + AverageAttributeScore(myCharacter);
+			var text = GetHeadline(myCharacter) + " - Combat score: " + myCharacter.CombatScore();
 
 			return new ContentResult() {Content = text};
-		}
-		
-		protected decimal AverageAttributeScore(Character character)
-		{
-			return (character.Strength + character.Dexterity + character.Constitution + character.Intelligence + character.Wisdom + character.Charisma) / 6m;
 		}
 
 		protected string GetHeadline(Character character)
