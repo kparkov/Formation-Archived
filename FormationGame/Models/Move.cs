@@ -29,7 +29,7 @@ namespace FormationGame.Models
 		[JsonIgnore]
 		public virtual Game Game { get; set; }
 
-		
+
 		// todo: implement needed properties
 
 
@@ -53,39 +53,27 @@ namespace FormationGame.Models
 			throw new NotImplementedException();
 		}
 
+		#region NavigationHelperMethods
 
+		public GameState PrecedingGameState()
+		{
 
+			var moveIndex = Game.Moves.IndexOf(this);
 
-		#region NavigationHelperProperties
+			return Game.GameStates[moveIndex];
+		}
 
-		//[JsonIgnore]
-		//[NotMapped]
-		//public virtual GameState PrecedingGameState
-		//{
-		//	get
-		//	{
-		//		var moveIndex = Game.Moves.IndexOf(this);
+		public GameState SucceedingGameState()
+		{
+			var moveIndex = Game.Moves.IndexOf(this);
 
-		//		return Game.GameStates[moveIndex];
-		//	}
-		//}
+			if (Game.GameStates.Count <= moveIndex)
+			{
+				return null;
+			}
 
-		//[JsonIgnore]
-		//[NotMapped]
-		//public virtual GameState SucceedingGameState
-		//{
-		//	get
-		//	{
-		//		var moveIndex = Game.Moves.IndexOf(this);
-
-		//		if (Game.GameStates.Count <= moveIndex)
-		//		{
-		//			return null;
-		//		}
-
-		//		return Game.GameStates[moveIndex + 1];
-		//	}
-		//}
+			return Game.GameStates[moveIndex + 1];
+		}
 
 		public bool Equals(Move move)
 		{
