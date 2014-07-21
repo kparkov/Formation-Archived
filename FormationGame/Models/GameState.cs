@@ -2,6 +2,7 @@
 using System.Linq;
 using BitFrame.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace FormationGame.Models
 {
@@ -13,8 +14,8 @@ namespace FormationGame.Models
 
 		// todo: implement needed properties
 
-
-
+        public virtual List<Die> BlackDiceRow { get; set; }
+        public virtual List<Die> WhiteDiceRow { get; set; }
 
 
 
@@ -45,7 +46,17 @@ namespace FormationGame.Models
 		/// <returns></returns>
 		public static GameState GetInitialState()
 		{
-			throw new NotImplementedException();
+            var state = new GameState();
+            state.BlackDiceRow = new List<Die>();
+            state.WhiteDiceRow = new List<Die>();
+
+            for (var i = 0; i < 8; i++) 
+            {
+                var die = new Die();
+                die.Roll();
+                state.BlackDiceRow.Add(die);
+            }
+            return state;
 		}
 
 		#region NavigationHelperProperties 

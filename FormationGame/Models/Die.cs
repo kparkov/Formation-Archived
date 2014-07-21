@@ -22,7 +22,7 @@ namespace FormationGame.Models
 		/// </summary>
 		public void Roll()
 		{
-			throw new NotImplementedException();
+            Value = randomNumberGenerator.GetRandomNumber(1, 6);
 		}
 	}
 }

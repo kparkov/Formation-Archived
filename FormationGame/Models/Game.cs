@@ -63,7 +63,15 @@ namespace FormationGame.Models
 		{
 			// todo: get a valid new game, ready for playing
 
-			return new Game();
+            var game = new Game();
+
+
+            game.White = white;
+            game.Black = black;
+            game.GameStates.Add(GameState.GetInitialState());
+
+            return game;
+
 		}
 
 		public override string ToString()
