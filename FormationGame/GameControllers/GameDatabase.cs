@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using BitFrame.Models;
 using FormationGame.Models;
 
 namespace FormationGame.GameControllers
