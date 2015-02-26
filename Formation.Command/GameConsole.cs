@@ -32,7 +32,7 @@ namespace Formation.Command
 
             Csl.StartTable(18, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 10);
 
-            var headers = new[] {"Player"}.Concat(Enumerable.Range(1, 7).Select(x => x.ToString())).Concat(new [] { "Sum" });
+            var headers = new[] {"Player"}.Concat(Enumerable.Range(1, 8).Select(x => x.ToString())).Concat(new [] { "Sum" });
 
             Csl.TableHead(headers.ToArray());
 
