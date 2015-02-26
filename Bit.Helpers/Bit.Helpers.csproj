@@ -1,0 +1,1146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7B1ABF88-86F5-4471-953F-00C69E3C0285}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bit.Helpers</RootNamespace>
+    <AssemblyName>Bit.Helpers</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation">
+      <HintPath>..\packages\FluentValidation.5.4.0.0\lib\Net40\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine">
+      <HintPath>..\packages\RazorEngine.3.6.0\lib\net45\RazorEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\Conf.cs" />
+    <Compile Include="Console\CommandTunnel.cs" />
+    <Compile Include="Console\ConsoleCommandHelpers.cs" />
+    <Compile Include="Console\ConsoleCommandModule.cs" />
+    <Compile Include="Console\DatabaseHelpers.cs" />
+    <Compile Include="Console\DeploymentHelpers.cs" />
+    <Compile Include="Console\ICommandInterface.cs" />
+    <Compile Include="Console\RunHelpers.cs" />
+    <Compile Include="CoreExtensions\EnumerableHelpers.cs" />
+    <Compile Include="Debugging.cs" />
+    <Compile Include="EntityFramework\CrudCommands.cs" />
+    <Compile Include="EntityFramework\DataCommandQueryBase.cs" />
+    <Compile Include="HtmlExtensions\AttributeHelpers.cs" />
+    <Compile Include="HtmlExtensions\CollectionHelpers.cs" />
+    <Compile Include="HtmlExtensions\DanishLocalization.cs" />
+    <Compile Include="HtmlExtensions\JavascriptHelpers.cs" />
+    <Compile Include="HtmlExtensions\LabelHelpers.cs" />
+    <Compile Include="HtmlExtensions\PartialHelpers.cs" />
+    <Compile Include="HtmlExtensions\PropertyHelpers.cs" />
+    <Compile Include="HtmlExtensions\StringHelpers.cs" />
+    <Compile Include="HtmlExtensions\TagHelpers.cs" />
+    <Compile Include="HtmlHelpers\SelfClosingTag.cs" />
+    <Compile Include="Json\JsonResultStatus.cs" />
+    <Compile Include="Json\JsonStandardResult.cs" />
+    <Compile Include="ModelBinding\ConcreteTypeModelBinder.cs" />
+    <Compile Include="ModelBinding\IExposesConcrete.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RazorMails\RazorMailHub.cs" />
+    <Compile Include="RazorMails\RazorMail.cs" />
+    <Compile Include="Reflection\AttributeTools.cs" />
+    <Compile Include="Reflection\ExpressionTools.cs" />
+    <Compile Include="Reflection\ObjectGraph.cs" />
+    <Compile Include="Validation\FailsWithJsonStandard.cs" />
+    <Compile Include="Validation\ModelStateFluentValidationHelpers.cs" />
+    <Compile Include="Validation\ValidateModelWith.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EmbeddedResource Include="Console\Qloud.pubxml" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\fonts\fontawesome-webfont.eot" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\fonts\fontawesome-webfont.ttf" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\fonts\fontawesome-webfont.woff" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\fonts\FontAwesome.otf" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\less\bordered-pulled.less" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\less\core.less" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\less\fixed-width.less" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\less\font-awesome.less" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\less\icons.less" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\less\larger.less" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\less\list.less" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\less\mixins.less" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\less\path.less" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\less\rotated-flipped.less" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\less\spinning.less" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\less\stacked.less" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\less\variables.less" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\scss\font-awesome.scss" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\scss\_bordered-pulled.scss" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\scss\_core.scss" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\scss\_fixed-width.scss" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\scss\_icons.scss" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\scss\_larger.scss" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\scss\_list.scss" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\scss\_mixins.scss" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\scss\_path.scss" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\scss\_rotated-flipped.scss" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\scss\_spinning.scss" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\scss\_stacked.scss" />
+    <None Include="ContentLibs\3rdparty\font-awesome-4.2.0\scss\_variables.scss" />
+    <None Include="ContentLibs\3rdparty\datepicker\less\datepicker.less" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\.gitignore" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\.jscs.json" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\.jshintrc" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\.travis.yml" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\bower.json" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\build\build.less" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\build\build3.less" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\build\build_standalone.less" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\build\build_standalone3.less" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\CHANGELOG.md" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\composer.json" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\CONTRIBUTING.md" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\docs\conf.py" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\docs\events.rst" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\docs\i18n.rst" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\docs\index.rst" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\docs\keyboard.rst" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\docs\make.bat" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\docs\Makefile" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\docs\markup.rst" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\docs\methods.rst" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\docs\options.rst" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\docs\REAME.md" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\less\datepicker.less" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\less\datepicker3.less" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\LICENSE" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\package.json" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\README.md" />
+    <None Include="ContentLibs\3rdparty\eternicode-datepicker\tests\README.md" />
+    <None Include="ContentLibs\3rdparty\select2-3.5.1\.gitignore" />
+    <None Include="ContentLibs\3rdparty\select2-3.5.1\bower.json" />
+    <None Include="ContentLibs\3rdparty\select2-3.5.1\component.json" />
+    <None Include="ContentLibs\3rdparty\select2-3.5.1\composer.json" />
+    <None Include="ContentLibs\3rdparty\select2-3.5.1\LICENSE" />
+    <None Include="ContentLibs\3rdparty\select2-3.5.1\package.json" />
+    <None Include="ContentLibs\3rdparty\select2-3.5.1\README.md" />
+    <None Include="ContentLibs\3rdparty\select2-3.5.1\release.sh" />
+    <None Include="ContentLibs\3rdparty\select2-3.5.1\select2.jquery.json" />
+    <None Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_en.js.template" />
+    <None Include="ContentLibs\3rdparty\select2-3.5.1\Thumbs.db" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\.editorconfig" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\.gitignore" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\.jshintignore" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\.jshintrc" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\.travis.yml" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\bower.json" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\component.json" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\composer.json" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\CONTRIBUTING.md" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\docs\.gitignore" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\docs\dist\.gitkeep" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\docs\README.md" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\docs\vendor\fonts\fontawesome-webfont.eot" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\docs\vendor\fonts\fontawesome-webfont.ttf" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\docs\vendor\fonts\fontawesome-webfont.woff" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\docs\vendor\fonts\FontAwesome.otf" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\LICENSE.md" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\package.json" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\README.md" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\select2.jquery.json" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\banner.json" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\scss\core.scss" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\scss\mixins\_gradients.scss" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\scss\theme\classic\layout.scss" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\scss\theme\classic\_defaults.scss" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\scss\theme\classic\_multiple.scss" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\scss\theme\classic\_single.scss" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\scss\theme\default\layout.scss" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\scss\theme\default\_multiple.scss" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\scss\theme\default\_single.scss" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\scss\_dropdown.scss" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\scss\_multiple.scss" />
+    <None Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\scss\_single.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\.gitignore" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\.travis.yml" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\fonts\bootstrap\glyphicons-halflings-regular.eot" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\fonts\bootstrap\glyphicons-halflings-regular.woff" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\fonts\bootstrap\glyphicons-halflings-regular.woff2" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\images\.keep" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_alerts.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_background-variant.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_border-radius.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_buttons.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_center-block.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_clearfix.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_forms.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_gradients.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_grid-framework.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_grid.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_hide-text.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_image.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_labels.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_list-group.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_nav-divider.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_nav-vertical-align.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_opacity.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_pagination.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_panels.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_progress-bar.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_reset-filter.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_resize.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_responsive-visibility.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_size.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_tab-focus.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_table-row.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_text-emphasis.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_text-overflow.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\mixins\_vendor-prefixes.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_alerts.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_badges.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_breadcrumbs.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_button-groups.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_buttons.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_carousel.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_close.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_code.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_component-animations.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_dropdowns.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_forms.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_glyphicons.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_grid.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_input-groups.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_jumbotron.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_labels.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_list-group.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_media.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_mixins.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_modals.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_navbar.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_navs.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_normalize.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_pager.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_pagination.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_panels.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_popovers.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_print.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_progress-bars.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_responsive-embed.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_responsive-utilities.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_scaffolding.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_tables.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_theme.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_thumbnails.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_tooltip.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_type.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_utilities.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_variables.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\bootstrap\_wells.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\_bootstrap-compass.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\_bootstrap-mincer.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\_bootstrap-sprockets.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\stylesheets\_bootstrap.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\bootstrap-sass.gemspec" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\bower.json" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\CHANGELOG.md" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\composer.json" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\CONTRIBUTING.md" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\Gemfile" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\lib\bootstrap-sass.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\lib\bootstrap-sass\engine.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\lib\bootstrap-sass\version.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\LICENSE" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\package.json" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\Rakefile" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\README.md" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\sache.json" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\tasks\bower.rake" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\tasks\converter.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\tasks\converter\char_string_scanner.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\tasks\converter\fonts_conversion.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\tasks\converter\js_conversion.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\tasks\converter\less_conversion.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\tasks\converter\logger.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\tasks\converter\network.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\templates\project\manifest.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\templates\project\styles.sass" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\templates\project\_bootstrap-variables.sass" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\compass_test.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\compilation_test.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_node_mincer\application.css.ejs.scss" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\app\assets\images\.keep" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\app\assets\stylesheets\application.css.sass" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\app\controllers\application_controller.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\app\controllers\pages_controller.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\app\helpers\application_helper.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\app\views\layouts\application.html.erb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\app\views\pages\root.html.slim" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\config.ru" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\config\application.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\config\boot.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\config\environment.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\config\environments\development.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\config\environments\production.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\config\environments\test.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\config\initializers\backtrace_silencers.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\config\initializers\filter_parameter_logging.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\config\initializers\inflections.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\config\initializers\mime_types.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\config\initializers\secret_token.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\config\initializers\session_store.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\config\initializers\wrap_parameters.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\config\locales\en.yml" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\config\locales\es.yml" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\config\routes.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\log\.keep" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\log\development.log" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\Rakefile" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\README.rdoc" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_sass_only\compile.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_sass_only\Gemfile" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_sass_only\import_all.sass" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\gemfiles\sass_3_2.gemfile" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\gemfiles\sass_3_3.gemfile" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\gemfiles\sass_3_4.gemfile" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\gemfiles\sass_head.gemfile" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\node_mincer_test.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\node_sass_compile_test.sh" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\pages_test.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\sass_test.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\sprockets_rails_test.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\support\dummy_rails_integration.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\support\reporting.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\test_helper.rb" />
+    <None Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\test_helper_rails.rb" />
+    <None Include="ContentLibs\3rdparty\foundation\.bowerrc" />
+    <None Include="ContentLibs\3rdparty\foundation\bower.json" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\fastclick\.bower.json" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\fastclick\bower.json" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\fastclick\LICENSE" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\fastclick\README.md" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\.bower.json" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\bower.json" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_accordion.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_alert-boxes.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_block-grid.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_breadcrumbs.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_button-groups.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_buttons.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_clearing.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_dropdown-buttons.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_dropdown.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_flex-video.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_forms.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_global.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_grid.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_icon-bar.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_inline-lists.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_joyride.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_keystrokes.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_labels.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_magellan.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_offcanvas.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_orbit.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_pagination.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_panels.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_pricing-tables.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_progress-bars.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_range-slider.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_reveal.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_side-nav.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_split-buttons.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_sub-nav.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_switches.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_tables.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_tabs.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_thumbs.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_toolbar.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_tooltips.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_top-bar.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_type.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\components\_visibility.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\_functions.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\foundation\_settings.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\foundation\scss\normalize.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\jquery-placeholder\.bower.json" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\jquery-placeholder\.gitattributes" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\jquery-placeholder\.gitignore" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\jquery-placeholder\bower.json" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\jquery-placeholder\README.md" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\jquery.cookie\.bower.json" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\jquery.cookie\bower.json" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\jquery\.bower.json" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\jquery\bower.json" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\jquery\dist\jquery.min.map" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\sizzle\dist\sizzle.min.map" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\.bower.json" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\.editorconfig" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\.gitignore" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\.travis.yml" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\media\Modernizr 2 Logo.ai" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\media\Modernizr 2 Logo.eps" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\media\Modernizr 2 Logo.pdf" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\readme.md" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\svg-img.svg.1" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\Windsong-webfont.eot" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\Windsong-webfont.otf" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\Windsong-webfont.ttf" />
+    <None Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\Windsong-webfont.woff" />
+    <None Include="ContentLibs\3rdparty\foundation\config.rb" />
+    <None Include="ContentLibs\3rdparty\foundation\Gemfile" />
+    <None Include="ContentLibs\3rdparty\foundation\Gemfile.lock" />
+    <None Include="ContentLibs\3rdparty\foundation\README.md" />
+    <None Include="ContentLibs\3rdparty\foundation\scss\app.scss" />
+    <None Include="ContentLibs\3rdparty\foundation\scss\_settings.scss" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ContentLibs\3rdparty\font-awesome-4.2.0\css\font-awesome.css" />
+    <Content Include="ContentLibs\3rdparty\font-awesome-4.2.0\css\font-awesome.min.css" />
+    <Content Include="ContentLibs\3rdparty\font-awesome-4.2.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="ContentLibs\3rdparty\datepicker\css\datepicker.css" />
+    <Content Include="ContentLibs\3rdparty\datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\css\datepicker.css" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\css\datepicker3.css" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_screenshots\demo_head.html" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_screenshots\markup_component.html" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_screenshots\markup_daterange.html" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_screenshots\markup_inline.html" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_screenshots\markup_input.html" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_screenshots\option_calendarweeks.html" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_screenshots\option_clearbtn.html" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_screenshots\option_daysofweekdisabled.html" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_screenshots\option_enddate.html" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_screenshots\option_language.html" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_screenshots\option_multidate.html" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_screenshots\option_startdate.html" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_screenshots\option_todaybtn.html" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_screenshots\option_todayhighlight.html" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_screenshots\option_weekstart.html" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_screenshots\script\common.css" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_screenshots\script\common.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_screenshots\script\debug.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_screenshots\script\html-imports.min.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_screenshots\script\screenshot.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_static\screenshots\demo_head.png" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_static\screenshots\markup_component.png" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_static\screenshots\markup_daterange.png" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_static\screenshots\markup_inline.png" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_static\screenshots\markup_input.png" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_static\screenshots\option_calendarweeks.png" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_static\screenshots\option_clearbtn.png" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_static\screenshots\option_daysofweekdisabled.png" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_static\screenshots\option_enddate.png" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_static\screenshots\option_language.png" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_static\screenshots\option_multidate.png" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_static\screenshots\option_startdate.png" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_static\screenshots\option_todaybtn.png" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_static\screenshots\option_todayhighlight.png" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\docs\_static\screenshots\option_weekstart.png" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\Gruntfile.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.ar.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.az.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.bg.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.bs.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.ca.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.cs.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.cy.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.da.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.de.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.el.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.en-GB.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.es.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.et.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.eu.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.fa.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.fi.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.fo.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.fr-CH.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.fr.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.gl.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.he.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.hr.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.hu.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.hy.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.id.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.is.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.it-CH.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.it.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.ja.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.ka.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.kh.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.kk.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.kr.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.lt.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.lv.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.mk.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.ms.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.nb.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.nl-BE.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.nl.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.no.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.pl.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.pt.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.ro.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.rs-latin.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.rs.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.ru.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.sk.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.sl.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.sq.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.sr-latin.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.sr.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.sv.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.sw.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.th.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.tr.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.uk.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.vi.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\js\locales\bootstrap-datepicker.zh-TW.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\tests\assets\coverage.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\tests\assets\jquery-1.7.1.min.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\tests\assets\mock.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\tests\assets\qunit-logging.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\tests\assets\qunit.css" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\tests\assets\qunit.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\tests\assets\utils.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\tests\suites\calendar-weeks.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\tests\suites\component.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\tests\suites\data-api.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\tests\suites\events.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\tests\suites\formats.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\tests\suites\inline.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\tests\suites\keyboard_navigation\2011.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\tests\suites\keyboard_navigation\2012.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\tests\suites\keyboard_navigation\all.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\tests\suites\methods.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\tests\suites\mouse_navigation\2011.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\tests\suites\mouse_navigation\2012.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\tests\suites\mouse_navigation\all.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\tests\suites\noconflict.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\tests\suites\options.js" />
+    <Content Include="ContentLibs\3rdparty\eternicode-datepicker\tests\tests.html" />
+    <None Include="ContentLibs\3rdparty\jquery\jquery-2.1.3.intellisense.js" />
+    <Content Include="ContentLibs\3rdparty\jquery\jquery-2.1.3.js" />
+    <Content Include="ContentLibs\3rdparty\modernizr\modernizr-2.8.3.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2-bootstrap.css" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2-spinner.gif" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2.css" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2.min.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2.png" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2x2.png" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_ar.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_az.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_bg.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_ca.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_cs.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_da.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_de.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_el.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_es.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_et.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_eu.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_fa.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_fi.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_fr.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_gl.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_he.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_hr.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_hu.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_id.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_is.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_it.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_ja.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_ka.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_ko.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_lt.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_lv.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_mk.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_ms.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_nl.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_no.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_pl.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_pt-BR.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_pt-PT.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_ro.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_rs.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_ru.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_sk.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_sv.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_th.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_tr.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_ug-CN.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_uk.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_vi.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_zh-CN.js" />
+    <Content Include="ContentLibs\3rdparty\select2-3.5.1\select2_locale_zh-TW.js" />
+    <Content Include="ContentLibs\bitkompagniet\bit.async.submit.js" />
+    <Content Include="ContentLibs\bitkompagniet\bit.async.validate.fields.js" />
+    <Content Include="ContentLibs\bitkompagniet\bit.autocorrect.js" />
+    <Content Include="ContentLibs\bitkompagniet\bit.expander.js" />
+    <Content Include="ContentLibs\bitkompagniet\bit.flashmessage.js" />
+    <Content Include="ContentLibs\bitkompagniet\bit.polyfills.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\css\select2.css" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\css\select2.min.css" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\az.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\bg.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\da.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\de.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\en.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\es.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\et.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\eu.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\fi.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\fr.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\gl.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\hr.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\hu.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\id.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\is.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\lt.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\lv.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\mk.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\nb.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\ro.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\ru.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\sk.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\sr.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\th.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\tr.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\uk.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\vi.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\i18n\zh-TW.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\select2.amd.full.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\select2.amd.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\select2.full.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\select2.full.min.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\select2.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\dist\js\select2.min.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\docs\announcements-4.0.html" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\docs\community.html" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\docs\examples.html" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\docs\index.html" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\docs\options.html" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\docs\vendor\css\bootstrap.min.css" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\docs\vendor\css\font-awesome.min.css" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\docs\vendor\css\prettify.css" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\docs\vendor\fonts\fontawesome-webfont.svg" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\docs\vendor\js\bootstrap.min.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\docs\vendor\js\prettify.min.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\docs\_includes\footer.html" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\docs\_includes\head.html" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\docs\_includes\navigation.html" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\docs\_layouts\default.html" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\docs\_layouts\home.html" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\Gruntfile.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\jquery.select2.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\jquery.shim.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\compat\matcher.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\core.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\data\ajax.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\data\array.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\data\base.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\data\maximumInputLength.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\data\maximumSelectionLength.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\data\minimumInputLength.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\data\select.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\data\tags.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\data\tokenizer.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\defaults.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\diacritics.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\dropdown.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\dropdown\attachBody.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\dropdown\attachContainer.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\dropdown\hidePlaceholder.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\dropdown\infiniteScroll.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\dropdown\minimumResultsForSearch.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\dropdown\search.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\dropdown\selectOnClose.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\az.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\bg.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\da.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\de.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\en.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\es.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\et.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\eu.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\fi.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\fr.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\gl.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\hr.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\hu.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\id.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\is.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\lt.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\lv.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\mk.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\nb.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\ro.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\ru.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\sk.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\sr.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\th.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\tr.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\uk.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\vi.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\i18n\zh-TW.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\keys.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\options.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\results.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\selection\allowClear.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\selection\base.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\selection\clickMask.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\selection\eventRelay.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\selection\multiple.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\selection\placeholder.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\selection\search.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\selection\single.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\translation.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\src\js\select2\utils.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\data\array-tests.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\data\array.html" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\data\base-tests.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\data\base.html" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\data\maximumInputLength-tests.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\data\maximumInputLength.html" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\data\maximumSelectionLength-tests.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\data\maximumSelectionLength.html" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\data\minimumInputLength-tests.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\data\minimumInputLength.html" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\data\select-tests.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\data\select.html" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\data\tags-tests.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\data\tags.html" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\dropdown\selectOnClose-tests.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\dropdown\selectOnClose.html" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\mock.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\options\data-tests.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\options\data.html" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\options\width-tests.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\options\width.html" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\selection\multiple-tests.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\selection\multiple.html" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\selection\placeholder-tests.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\selection\placeholder.html" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\selection\single-tests.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\selection\single.html" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\utils\decorator-tests.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\utils\decorator.html" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\vendor\qunit-1.14.0.css" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\tests\vendor\qunit-1.14.0.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\vendor\almond-0.2.9.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\vendor\jquery-2.1.0.js" />
+    <Content Include="ContentLibs\3rdparty\select2-4.0.0-beta.2\vendor\jquery.mousewheel.js" />
+    <Content Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\fonts\bootstrap\glyphicons-halflings-regular.svg" />
+    <Content Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\javascripts\bootstrap-sprockets.js" />
+    <Content Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\javascripts\bootstrap.js" />
+    <Content Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\javascripts\bootstrap.min.js" />
+    <Content Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\javascripts\bootstrap\affix.js" />
+    <Content Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\javascripts\bootstrap\alert.js" />
+    <Content Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\javascripts\bootstrap\button.js" />
+    <Content Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\javascripts\bootstrap\carousel.js" />
+    <Content Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\javascripts\bootstrap\collapse.js" />
+    <Content Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\javascripts\bootstrap\dropdown.js" />
+    <Content Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\javascripts\bootstrap\modal.js" />
+    <Content Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\javascripts\bootstrap\popover.js" />
+    <Content Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\javascripts\bootstrap\scrollspy.js" />
+    <Content Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\javascripts\bootstrap\tab.js" />
+    <Content Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\javascripts\bootstrap\tooltip.js" />
+    <Content Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\assets\javascripts\bootstrap\transition.js" />
+    <Content Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_node_mincer\apple-touch-icon-144-precomposed.png" />
+    <Content Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_node_mincer\manifest.js" />
+    <Content Include="ContentLibs\3rdparty\bootstrap-sass-3.3.2\test\dummy_rails\app\assets\javascripts\application.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\fastclick\lib\fastclick.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\css\foundation.css" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\css\normalize.css" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\js\foundation.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\js\foundation.min.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\js\foundation\foundation.abide.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\js\foundation\foundation.accordion.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\js\foundation\foundation.alert.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\js\foundation\foundation.clearing.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\js\foundation\foundation.dropdown.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\js\foundation\foundation.equalizer.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\js\foundation\foundation.interchange.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\js\foundation\foundation.joyride.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\js\foundation\foundation.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\js\foundation\foundation.magellan.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\js\foundation\foundation.offcanvas.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\js\foundation\foundation.orbit.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\js\foundation\foundation.reveal.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\js\foundation\foundation.slider.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\js\foundation\foundation.tab.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\js\foundation\foundation.tooltip.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\js\foundation\foundation.topbar.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\js\vendor\fastclick.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\js\vendor\jquery.cookie.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\js\vendor\jquery.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\js\vendor\modernizr.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\foundation\js\vendor\placeholder.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery-placeholder\demo.html" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery-placeholder\jquery.placeholder.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery-placeholder\LICENSE-MIT.txt" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery-placeholder\tests\index.html" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery-placeholder\tests\tests.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery.cookie\jquery.cookie.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\dist\jquery.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\dist\jquery.min.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\MIT-LICENSE.txt" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\ajax.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\ajax\jsonp.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\ajax\load.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\ajax\parseJSON.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\ajax\parseXML.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\ajax\script.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\ajax\var\nonce.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\ajax\var\rquery.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\ajax\xhr.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\attributes.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\attributes\attr.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\attributes\classes.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\attributes\prop.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\attributes\support.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\attributes\val.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\callbacks.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\core.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\core\access.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\core\init.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\core\parseHTML.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\core\ready.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\core\var\rsingleTag.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\css.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\css\addGetHookIf.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\css\curCSS.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\css\defaultDisplay.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\css\hiddenVisibleSelectors.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\css\support.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\css\swap.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\css\var\cssExpand.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\css\var\getStyles.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\css\var\isHidden.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\css\var\rmargin.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\css\var\rnumnonpx.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\data.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\data\accepts.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\data\Data.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\data\var\data_priv.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\data\var\data_user.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\deferred.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\deprecated.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\dimensions.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\effects.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\effects\animatedSelector.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\effects\Tween.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\event.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\event\alias.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\event\support.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\exports\amd.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\exports\global.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\intro.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\jquery.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\manipulation.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\manipulation\support.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\manipulation\var\rcheckableType.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\manipulation\_evalUrl.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\offset.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\outro.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\queue.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\queue\delay.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\selector-native.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\selector-sizzle.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\selector.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\serialize.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\sizzle\dist\sizzle.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\sizzle\dist\sizzle.min.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\traversing.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\traversing\findFilter.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\traversing\var\rneedsContext.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\var\arr.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\var\class2type.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\var\concat.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\var\hasOwn.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\var\indexOf.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\var\pnum.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\var\push.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\var\rnotwhite.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\var\slice.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\var\strundefined.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\var\support.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\var\toString.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\jquery\src\wrap.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\a-download.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\audio-audiodata-api.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\audio-webaudio-api.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\battery-api.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\battery-level.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\blob-constructor.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\canvas-todataurl-type.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\contenteditable.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\contentsecuritypolicy.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\contextmenu.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\cookies.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\cors.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-backgroundposition-shorthand.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-backgroundposition-xy.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-backgroundrepeat.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-backgroundsizecover.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-boxsizing.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-calc.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-cubicbezierrange.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-displayrunin.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-displaytable.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-filters.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-hyphens.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-lastchild.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-mask.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-mediaqueries.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-objectfit.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-overflow-scrolling.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-pointerevents.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-positionsticky.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-regions.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-remunit.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-resize.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-scrollbars.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-shapes.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-subpixelfont.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-supports.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-userselect.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-vhunit.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-vmaxunit.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-vminunit.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\css-vwunit.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\custom-protocol-handler.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\dart.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\dataview-api.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\dom-classlist.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\dom-createElement-attrs.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\dom-dataset.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\dom-microdata.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\elem-datalist.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\elem-details.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\elem-output.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\elem-progress-meter.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\elem-ruby.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\elem-time.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\elem-track.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\emoji.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\es5-strictmode.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\event-deviceorientation-motion.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\exif-orientation.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\file-api.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\file-filesystem.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\forms-fileinput.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\forms-formattribute.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\forms-inputnumber-l10n.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\forms-placeholder.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\forms-speechinput.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\forms-validation.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\fullscreen-api.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\gamepad.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\getusermedia.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\ie8compat.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\iframe-sandbox.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\iframe-seamless.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\iframe-srcdoc.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\img-apng.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\img-webp.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\json.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\lists-reversed.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\mathml.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\network-connection.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\network-eventsource.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\network-xhr2.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\notification.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\performance.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\pointerlock-api.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\quota-management-api.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\requestanimationframe.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\script-async.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\script-defer.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\style-scoped.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\svg-filters.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\unicode.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\url-data-uri.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\userdata.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\vibration.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\web-intents.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\webgl-extensions.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\websockets-binary.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\window-framed.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\workers-blobworkers.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\workers-dataworkers.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\feature-detects\workers-sharedworkers.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\grunt.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\media\Modernizr 2 Logo.png" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\media\Modernizr 2 Logo.svg" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\modernizr.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\basic.html" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse.html" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\alpha.png" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\apng_test.png" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\before-after.png" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\form_validation.html" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\ga.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\green5x5.png" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\hashchange.html" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\jquery.min.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\mathml.html" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\mathml_ref.png" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\modernizr-1.7.min.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\png_alpha_result.png" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\pushstate.html" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\red30x30.png" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\ruby.png" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\stroked-text.png" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\style.css" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\svg-html-blur.png" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\svg-img.svg" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\svg_blur.png" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\table.png" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\text-shadow1.png" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\text-shadow2.png" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\Windsong-webfont.svg" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\windsong_font.png" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\caniuse_files\xhtml.html" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\index.html" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\js\basic.html" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\js\dumpdata.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\js\lib\detect-global.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\js\lib\jquery-1.7b2.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\js\lib\jsonselect.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\js\lib\polyfills.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\js\lib\uaparser.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\js\setup.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\js\unit-caniuse.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\js\unit.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\qunit\qunit.css" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\qunit\qunit.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\bower_components\modernizr\test\qunit\run-qunit.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\humans.txt" />
+    <Content Include="ContentLibs\3rdparty\foundation\index.html" />
+    <Content Include="ContentLibs\3rdparty\foundation\js\app.js" />
+    <Content Include="ContentLibs\3rdparty\foundation\robots.txt" />
+    <Content Include="ContentLibs\3rdparty\foundation\stylesheets\app.css" />
+    <Content Include="ContentLibs\bitkompagniet\bit.suggest.js" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
