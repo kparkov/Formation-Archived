@@ -30,17 +30,19 @@ namespace Formation.Command
         {
             Csl.Header(string.Format("Game state {0}, next to move is {1}", game.States.Count, game.GetActivePlayer().Name));
 
-            Csl.StartTable(18, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4);
+            Csl.StartTable(18, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 10);
 
-            var headers = new[] {"Player"}.Concat(Enumerable.Range(1, 7).Select(x => x.ToString()));
+            var headers = new[] {"Player"}.Concat(Enumerable.Range(1, 7).Select(x => x.ToString())).Concat(new [] { "Sum" });
 
             Csl.TableHead(headers.ToArray());
 
-            var white = new[] {game.White.Name}.Concat(game.GetCurrentState().WhiteCells.Select(x => (x is Die) ? ((Die) x).Value.ToString() : "." ));
+            var white = new[] {game.White.Name}.Concat(game.GetCurrentState().WhiteCells.Select(x => (x is Die) ? ((Die) x).Value.ToString() : "." )).ToList();
+            white.Add(game.GetCurrentState().WhiteCells.OfType<Die>().Sum(x => x.Value).ToString());
 
             Csl.TableRow(white.ToArray());
 
-            var black = new[] { game.Black.Name }.Concat(game.GetCurrentState().BlackCells.Select(x => (x is Die) ? ((Die) x).Value.ToString() : "." ));
+            var black = new[] { game.Black.Name }.Concat(game.GetCurrentState().BlackCells.Select(x => (x is Die) ? ((Die) x).Value.ToString() : "." )).ToList();
+            black.Add(game.GetCurrentState().BlackCells.OfType<Die>().Sum(x => x.Value).ToString());
 
             Csl.TableRow(black.ToArray());
 

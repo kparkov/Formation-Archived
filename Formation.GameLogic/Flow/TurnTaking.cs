@@ -53,5 +53,14 @@ namespace Formation.GameLogic.Flow
 
             return game;
         }
+
+        public Move GetMoveFromParameters(string moveName /*We need some more parameters here*/)
+        {
+            var move = GameMechanics.Rules.GetMoveByName(moveName);
+
+            // Do something with the move and the parameters here.
+
+            return move;
+        }
     }
 }

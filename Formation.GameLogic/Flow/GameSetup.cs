@@ -15,7 +15,7 @@ namespace Formation.GameLogic.Flow
             var state = new GameState();
 
             state.WhiteCells = new List<GameBoardCell>() { new GameBoardCell(), new GameBoardCell(), new GameBoardCell(), new Die(), new GameBoardCell(), new GameBoardCell(), new GameBoardCell(), new GameBoardCell(), new GameBoardCell(), new GameBoardCell() };
-            state.BlackCells = new List<GameBoardCell>() { new GameBoardCell(), new GameBoardCell() };
+            state.BlackCells = new List<GameBoardCell>() { new GameBoardCell(), new GameBoardCell(), new GameBoardCell(), new GameBoardCell(), new GameBoardCell(), new GameBoardCell(), new GameBoardCell() };
 
             return state;
         }
