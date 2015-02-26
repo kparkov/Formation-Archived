@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Formation.Data.Model;
 using Formation.GameLogic.Abstract;
+using System.Linq;
 
 namespace Formation.GameLogic.Flow
 {
@@ -14,8 +15,17 @@ namespace Formation.GameLogic.Flow
         {
             var state = new GameState();
 
-            state.WhiteCells = new List<GameBoardCell>() { new GameBoardCell(), new GameBoardCell(), new GameBoardCell(), new Die(), new GameBoardCell(), new GameBoardCell(), new GameBoardCell(), new GameBoardCell(), new GameBoardCell(), new GameBoardCell() };
-            state.BlackCells = new List<GameBoardCell>() { new GameBoardCell(), new GameBoardCell(), new GameBoardCell(), new GameBoardCell(), new GameBoardCell(), new GameBoardCell(), new GameBoardCell(), new GameBoardCell() };
+            state.WhiteCells = new List<GameBoardCell>() {new Die(), new Die(), new Die(), new Die(), new Die() };
+            state.BlackCells = new List<GameBoardCell>() {new Die(), new Die(), new Die(), new Die(), new Die() };
+
+            state.WhiteCells = state.WhiteCells.OfType<Die>().OrderByDescending(x => x.Value).Cast<GameBoardCell>().ToList();
+            state.BlackCells = state.BlackCells.OfType<Die>().OrderByDescending(x => x.Value).Cast<GameBoardCell>().ToList();
+
+            state.WhiteCells.Add(new GameBoardCell());
+            state.WhiteCells.Add(new GameBoardCell());
+            state.WhiteCells = state.WhiteCells.Reverse().ToList();
+            state.WhiteCells.Add(new GameBoardCell());
+            state.WhiteCells = state.WhiteCells.Reverse().ToList();
 
             return state;
         }

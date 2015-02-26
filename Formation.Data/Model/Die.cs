@@ -10,10 +10,12 @@ namespace Formation.Data.Model
 
         public Die()
         {
+            Roll();
         }
 
         public void Roll()
         {
+           Value = randomizer.Next(1, 7);
         }
     }
 }
