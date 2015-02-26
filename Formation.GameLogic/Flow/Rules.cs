@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Formation.Data.Model;
 using Formation.GameLogic.Abstract;
 
@@ -22,10 +23,10 @@ namespace Formation.GameLogic.Flow
             return true;
         }
         
-        // This is wrong! Given a state and a move, we currently return... an empty game state???
+        // This is correct! But none of the ApplyMove calls are... :-(
         public GameState GetNewStateAfterMove(GameState currentState, Move move)
         {
-            return new GameState();
+            return move.ApplyMove(currentState);
         }
 
         // This is wrong! Any move is considered valid!
@@ -38,6 +39,12 @@ namespace Formation.GameLogic.Flow
         public List<Move> GetOptions(GameState state)
         {
             return new List<Move>();
+        }
+
+        // This is just a utility method - given the name of a move, we construct the relevant object
+        public Move GetMoveByName(string name)
+        {
+            return (Move)Activator.CreateInstance(Type.GetType(name));
         }
     }
 }
